@@ -10,19 +10,21 @@ namespace pryEstructuraDatos
 {
     internal class clsCola
     {
-        public clsNodo Primero; // Declaramos el primer Nodo
-        public clsNodo Ultimo; // Declaramos el ultimo Nodo
-        public clsNodo Aux; // Declaramos un nodo auxiliar
+        // Nodos de la clase clsCola
+        public clsNodo Primero;
+        public clsNodo Ultimo;
+        public clsNodo Aux;
+
         public void Agregar(clsNodo Nuevo) // Recibe los datos del Nuevo Nodo
         {
-            if (Primero == null) // Si no existe ningun Nodo:
+            if (Primero == null) // Si no existe ningun Nodo
             {
-                Primero = Nuevo; // El nuevo es el primero
-                Ultimo = Nuevo; // El nuevo es el ultimo
+                Primero = Nuevo; // El nuevo pasa a ser el primero
+                Ultimo = Nuevo; // El nuevo pasa a ser ultimo
             }
-            else // Si no:
+            else
             {
-                Ultimo.Siguiente = Nuevo; // Al ultimo se le engacha el siguiente (Nuevo)
+                Ultimo.Siguiente = Nuevo; // 
                 Ultimo = Nuevo; // El nuevo pasa a ser Ultimo
             }
         }
