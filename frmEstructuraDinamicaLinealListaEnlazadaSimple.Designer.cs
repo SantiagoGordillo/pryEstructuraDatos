@@ -251,6 +251,7 @@ namespace pryEstructuraDatos
             this.Controls.Add(this.mrcElementosEliminados);
             this.Controls.Add(this.mrcNuevosElementos);
             this.Name = "frmEstructuraDinamicaLinealListaEnlazadaSimple";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista enlazada simple";
             this.Load += new System.EventHandler(this.frmEstructuraDinamicaLinealListaEnlazadaSimple_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbRepresentacionListaSimple)).EndInit();

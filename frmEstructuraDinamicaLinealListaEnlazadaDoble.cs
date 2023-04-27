@@ -19,46 +19,47 @@ namespace pryEstructuraDatos
 
         clsListaDoble Lista = new clsListaDoble();
 
-        private void frmEstructuraDinamicaLinealListaEnlazadaDoble_Load(object sender, EventArgs e)
-        {
-            //btnAgregar.Enabled = false;
-            //btnEliminar.Enabled = false;
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo objNodo = new clsNodo();
+            if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
+            {  
+                clsNodo objNodo = new clsNodo();
 
-            objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
-            objNodo.Nombre = txtNombreNuevo.Text;
-            objNodo.Tramite = txtTramiteNuevo.Text;
+                objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
+                objNodo.Nombre = txtNombreNuevo.Text;
+                objNodo.Tramite = txtTramiteNuevo.Text;
 
-            Lista.Agregar(objNodo);
+                Lista.Agregar(objNodo);
 
-            if (rbAscendente.Checked)
-            {
-                Lista.Recorrer(dgvGrilla);
-                Lista.Recorrer(lsbLista);
-                Lista.Recorrer(cbEliminar);
+                if (rbAscendente.Checked)
+                {
+                    Lista.Recorrer(dgvGrilla);
+                    Lista.Recorrer(lsbLista);
+                    Lista.Recorrer(cbEliminar);
+                }
+                else if (rbDescendente.Checked)
+                {
+                    Lista.RecorrerDes(dgvGrilla);
+                    Lista.RecorrerDes(lsbLista);
+                    Lista.RecorrerDes(cbEliminar);
+                }
+
+                txtCodigoNuevo.Text = "";
+                txtNombreNuevo.Text = "";
+                txtTramiteNuevo.Text = "";
+                txtCodigoNuevo.Focus();
             }
-            else if (rbDescendente.Checked)
+            else
             {
-                Lista.RecorrerDes(dgvGrilla);
-                Lista.RecorrerDes(lsbLista);
-                Lista.RecorrerDes(cbEliminar);
+                MessageBox.Show("Complete todos los campos");
+                txtCodigoNuevo.Focus();
             }
-
-            txtCodigoNuevo.Text = "";
-            txtNombreNuevo.Text = "";
-            txtTramiteNuevo.Text = "";
-            txtCodigoNuevo.Focus();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if ((Lista.Primero != null) && (cbEliminar.Items != null))
+            if ((Lista.Primero != null) && (cbEliminar.Text != ""))
             {
-                //cbEliminar.Text = Lista.Primero.Codigo.ToString();
 
                 Lista.Eliminar(Convert.ToInt32(cbEliminar.SelectedItem));
 
@@ -81,17 +82,10 @@ namespace pryEstructuraDatos
             {
                 MessageBox.Show("No se encontro ningun dato", "Error");
 
-                cbEliminar.Items.Clear();
-
                 txtCodigoNuevo.Focus();
             }
         }
-
-        private void cbEliminar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //btnEliminar.Enabled = true;
-        }
-
+ 
         private void rbAscendente_CheckedChanged(object sender, EventArgs e)
         {
             Lista.Recorrer(dgvGrilla);

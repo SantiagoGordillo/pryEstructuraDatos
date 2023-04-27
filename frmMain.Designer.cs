@@ -94,14 +94,14 @@
             // tmsiPilas
             // 
             this.tmsiPilas.Name = "tmsiPilas";
-            this.tmsiPilas.Size = new System.Drawing.Size(180, 22);
+            this.tmsiPilas.Size = new System.Drawing.Size(103, 22);
             this.tmsiPilas.Text = "Pilas";
             this.tmsiPilas.Click += new System.EventHandler(this.tmsiPilas_Click);
             // 
             // tmsiColas
             // 
             this.tmsiColas.Name = "tmsiColas";
-            this.tmsiColas.Size = new System.Drawing.Size(180, 22);
+            this.tmsiColas.Size = new System.Drawing.Size(103, 22);
             this.tmsiColas.Text = "Colas";
             this.tmsiColas.Click += new System.EventHandler(this.tmsiColas_Click);
             // 
@@ -111,20 +111,20 @@
             this.tmsiSimples,
             this.tmsiDobles});
             this.tmsiListas.Name = "tmsiListas";
-            this.tmsiListas.Size = new System.Drawing.Size(180, 22);
+            this.tmsiListas.Size = new System.Drawing.Size(103, 22);
             this.tmsiListas.Text = "Listas";
             // 
             // tmsiSimples
             // 
             this.tmsiSimples.Name = "tmsiSimples";
-            this.tmsiSimples.Size = new System.Drawing.Size(180, 22);
+            this.tmsiSimples.Size = new System.Drawing.Size(115, 22);
             this.tmsiSimples.Text = "Simples";
             this.tmsiSimples.Click += new System.EventHandler(this.tmsiSimples_Click);
             // 
             // tmsiDobles
             // 
             this.tmsiDobles.Name = "tmsiDobles";
-            this.tmsiDobles.Size = new System.Drawing.Size(180, 22);
+            this.tmsiDobles.Size = new System.Drawing.Size(115, 22);
             this.tmsiDobles.Text = "Dobles";
             this.tmsiDobles.Click += new System.EventHandler(this.tmsiDobles_Click);
             // 
@@ -162,6 +162,7 @@
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.Text = "Estructura de Datos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.msMain.ResumeLayout(false);
             this.msMain.PerformLayout();
             this.ResumeLayout(false);

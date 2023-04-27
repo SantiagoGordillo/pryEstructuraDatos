@@ -292,6 +292,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEstructuraDinamicaLinealCola";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cola";
             this.mrcNuevosElementos.ResumeLayout(false);
             this.mrcNuevosElementos.PerformLayout();

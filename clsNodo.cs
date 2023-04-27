@@ -47,5 +47,17 @@ namespace pryEstructuraDatos
             get { return ant; }
             set { ant = value; }
         }
+
+        public clsNodo Izquierda
+        {
+            get { return sig; }
+            set { sig = value; }
+        }
+
+        public clsNodo Derecha
+        {
+            get { return ant; }
+            set { ant = value; }
+        }
     }
 }

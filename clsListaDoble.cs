@@ -99,9 +99,9 @@ namespace pryEstructuraDatos
                             Ant = Aux; // El Ant apunta al Aux
                             Aux = Aux.Siguiente; // El Aux apunta al siguiente
                         }
-                        Ant.Siguiente = Aux.Siguiente; // El valor siguiente del Ant apunta al valor siguiente del Aux
-                        Aux = Aux.Siguiente; // El Aux apunta al siguiente del Aux
-                        Aux.Anterior = Ant; // El valor anterior del Aux apunta al Ant
+                        Aux = Aux.Siguiente;
+                        Ant.Siguiente = Aux;
+                        Aux.Anterior = Ant;
                     }
                 }
             }

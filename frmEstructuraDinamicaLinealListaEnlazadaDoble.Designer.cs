@@ -148,7 +148,6 @@
             this.cbEliminar.Name = "cbEliminar";
             this.cbEliminar.Size = new System.Drawing.Size(118, 21);
             this.cbEliminar.TabIndex = 6;
-            this.cbEliminar.SelectedIndexChanged += new System.EventHandler(this.cbEliminar_SelectedIndexChanged);
             // 
             // btnEliminar
             // 
@@ -187,7 +186,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(6, 168);
+            this.btnAgregar.Location = new System.Drawing.Point(6, 161);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(165, 31);
             this.btnAgregar.TabIndex = 2;
@@ -289,8 +288,8 @@
             this.Controls.Add(this.mrcElementosEliminados);
             this.Controls.Add(this.mrcNuevosElementos);
             this.Name = "frmEstructuraDinamicaLinealListaEnlazadaDoble";
-            this.Text = "Lista Enlazada Doble";
-            this.Load += new System.EventHandler(this.frmEstructuraDinamicaLinealListaEnlazadaDoble_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "  ";
             ((System.ComponentModel.ISupportInitialize)(this.pbRepresentacionListaSimple)).EndInit();
             this.mrcListaGrilla.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
