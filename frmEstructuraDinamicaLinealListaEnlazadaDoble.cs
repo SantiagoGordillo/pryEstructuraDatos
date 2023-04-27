@@ -58,9 +58,9 @@ namespace pryEstructuraDatos
         {
             if ((Lista.Primero != null) && (cbEliminar.Items != null))
             {
-                cbEliminar.Text = Lista.Primero.Codigo.ToString();
+                //cbEliminar.Text = Lista.Primero.Codigo.ToString();
 
-                Lista.Eliminar(Convert.ToInt32(cbEliminar.Text));
+                Lista.Eliminar(Convert.ToInt32(cbEliminar.SelectedItem));
 
                 if (rbAscendente.Checked)
                 {
@@ -74,8 +74,6 @@ namespace pryEstructuraDatos
                     Lista.RecorrerDes(lsbLista);
                     Lista.RecorrerDes(cbEliminar);
                 }
-
-                cbEliminar.Items.Clear();
 
                 txtCodigoNuevo.Focus();
             }

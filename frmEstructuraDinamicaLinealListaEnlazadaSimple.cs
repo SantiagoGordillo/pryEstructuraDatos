@@ -55,8 +55,6 @@ namespace pryEstructuraDatos
                 Lista.Recorrer(dgvGrilla);
                 Lista.Recorrer(lsbLista);
 
-                cbEliminar.Items.Clear();
-
                 txtCodigoNuevo.Focus();
             }
             else
