@@ -18,7 +18,6 @@ namespace pryEstructuraDatos
         }
 
         clsListaDoble Lista = new clsListaDoble();
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
