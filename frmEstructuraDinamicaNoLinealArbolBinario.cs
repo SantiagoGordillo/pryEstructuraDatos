@@ -25,17 +25,24 @@ namespace pryEstructuraDatos
         {
             if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
             {
-                clsNodo objNodo = new clsNodo();
+                if (Arbol.Buscar(Convert.ToInt32(txtCodigoNuevo.Text)) == false)
+                {
+                    clsNodo objNodo = new clsNodo();
 
-                objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
-                objNodo.Nombre = txtNombreNuevo.Text;
-                objNodo.Tramite = txtTramiteNuevo.Text;
+                    objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
+                    objNodo.Nombre = txtNombreNuevo.Text;
+                    objNodo.Tramite = txtTramiteNuevo.Text;
 
-                SeleccionRecorrido();
+                    SeleccionRecorrido();
 
-                Arbol.Agregar(objNodo);
+                    Arbol.Agregar(objNodo);
 
-                Recorridos();
+                    Recorridos();
+                }
+                else
+                {
+                    MessageBox.Show("El codigo ya existe", "Error");
+                }
 
                 txtCodigoNuevo.Text = "";
                 txtNombreNuevo.Text = "";
@@ -44,8 +51,10 @@ namespace pryEstructuraDatos
             }
             else
             {
+                if (txtTramiteNuevo.Text == "") txtTramiteNuevo.Focus();
+                else if (txtNombreNuevo.Text == "") txtNombreNuevo.Focus();
+                else if (txtCodigoNuevo.Text == "") txtCodigoNuevo.Focus();
                 MessageBox.Show("Complete todos los campos");
-                txtCodigoNuevo.Focus();
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)

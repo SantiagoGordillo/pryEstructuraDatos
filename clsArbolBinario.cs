@@ -11,23 +11,10 @@ namespace pryEstructuraDatos
     internal class clsArbolBinario
     {
         public clsNodo ini;
-        public clsNodo ant;
-        public clsNodo sig;
-
         public clsNodo Raiz
         {
             get { return ini; }
             set { ini = value; }
-        }
-        public clsNodo Izquierda
-        {
-            get { return ant; }
-            set { ant = value; }
-        }
-        public clsNodo Derecha
-        {
-            get { return sig; }
-            set { sig = value; }
         }
         public void Agregar(clsNodo Nuevo)
         {
@@ -85,8 +72,13 @@ namespace pryEstructuraDatos
                 }
                 else
                 {
+                    Aux = Raiz.Izquierda;
+                    while (Aux.Derecha != null)
+                    {
+                        Aux = Aux.Derecha;
+                    }
+                    Aux.Derecha = Raiz.Derecha;
                     Raiz = Raiz.Izquierda;
-                    Raiz.Derecha = Aux.Derecha;
                 }
             }
             else
@@ -152,6 +144,29 @@ namespace pryEstructuraDatos
                         }
                     }
                 }
+            }
+        }
+        public bool Buscar(Int32 Codigo)
+        {
+            clsNodo Aux = Raiz;
+            while (Aux != null && Aux.Codigo != Codigo)
+            {
+                if (Codigo < Aux.Codigo)
+                {
+                    Aux = Aux.Izquierda;
+                }
+                else
+                {
+                    Aux = Aux.Derecha;
+                }
+            }
+            if (Aux != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         public void Recorrer(ListBox Lista, bool Ascendente, string Recorrido)
