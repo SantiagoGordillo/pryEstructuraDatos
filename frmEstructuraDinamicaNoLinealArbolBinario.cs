@@ -152,6 +152,7 @@ namespace pryEstructuraDatos
             Arbol.Recorrer(dgvGrilla, Ascendente, Recorrido);
             Arbol.Recorrer(lsbLista, Ascendente, Recorrido);
             Arbol.Recorrer(cbEliminar, Ascendente, Recorrido);
+            Arbol.Recorrer(tvDatos);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,6 +11,9 @@ namespace pryEstructuraDatos
 {
     internal class clsArbolBinario
     {
+        public TreeNode NodoTree;
+        public TreeNode NuevoTree;
+        public TreeNode AuxTree;
         public clsNodo ini;
         public clsNodo Raiz
         {
@@ -169,6 +173,13 @@ namespace pryEstructuraDatos
                 return false;
             }
         }
+        public void Recorrer(TreeView Tree)
+        {
+            Tree.Nodes.Clear();
+            NodoTree = Tree.Nodes.Add(Raiz.Codigo.ToString());
+
+            RecorrerTree(Tree, Raiz);
+        }
         public void Recorrer(ListBox Lista, bool Ascendente, string Recorrido)
         {
             Lista.Items.Clear ();
@@ -218,6 +229,19 @@ namespace pryEstructuraDatos
             else if (Recorrido == "PreOrder")
             {
                 PreOrder(Grilla, Raiz);
+            }
+        }
+        public void RecorrerTree(TreeView Tree, clsNodo Nodo)
+        {
+            if (Nodo.Derecha != null)
+            {
+                NuevoTree = NodoTree.Nodes.Add(Nodo.Derecha.Codigo.ToString());
+                RecorrerTree(Tree, Nodo.Derecha);
+            }
+            if (Nodo.Izquierda != null)
+            {
+                NuevoTree = NodoTree.Nodes.Add(Nodo.Izquierda.Codigo.ToString());
+                RecorrerTree(Tree, Nodo.Izquierda);
             }
         }
         public void InOrderAcs(ListBox Lista, clsNodo Raiz)

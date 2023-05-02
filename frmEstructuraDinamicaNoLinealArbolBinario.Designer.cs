@@ -54,6 +54,8 @@
             this.rbPostOrder = new System.Windows.Forms.RadioButton();
             this.rbPreOrder = new System.Windows.Forms.RadioButton();
             this.rbInOrder = new System.Windows.Forms.RadioButton();
+            this.tvDatos = new System.Windows.Forms.TreeView();
+            this.gbTreeView = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbRepresentacionListaSimple)).BeginInit();
             this.mrcListaGrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -61,6 +63,7 @@
             this.mrcNuevosElementos.SuspendLayout();
             this.gbListarDatos.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbTreeView.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbRepresentacionListaSimple
@@ -111,7 +114,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.RowHeadersWidth = 62;
-            this.dgvGrilla.Size = new System.Drawing.Size(508, 266);
+            this.dgvGrilla.Size = new System.Drawing.Size(508, 264);
             this.dgvGrilla.TabIndex = 0;
             // 
             // dgvcCódigo
@@ -360,11 +363,29 @@
             this.rbInOrder.UseVisualStyleBackColor = true;
             this.rbInOrder.CheckedChanged += new System.EventHandler(this.rbInOrder_CheckedChanged);
             // 
+            // tvDatos
+            // 
+            this.tvDatos.Location = new System.Drawing.Point(15, 30);
+            this.tvDatos.Name = "tvDatos";
+            this.tvDatos.Size = new System.Drawing.Size(384, 595);
+            this.tvDatos.TabIndex = 19;
+            // 
+            // gbTreeView
+            // 
+            this.gbTreeView.Controls.Add(this.tvDatos);
+            this.gbTreeView.Location = new System.Drawing.Point(927, 33);
+            this.gbTreeView.Name = "gbTreeView";
+            this.gbTreeView.Size = new System.Drawing.Size(416, 647);
+            this.gbTreeView.TabIndex = 20;
+            this.gbTreeView.TabStop = false;
+            this.gbTreeView.Text = "Tree View";
+            // 
             // frmEstructuraDinamicaNoLinealArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 702);
+            this.ClientSize = new System.Drawing.Size(1355, 686);
+            this.Controls.Add(this.gbTreeView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbListarDatos);
             this.Controls.Add(this.pbRepresentacionListaSimple);
@@ -389,6 +410,7 @@
             this.gbListarDatos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbTreeView.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -420,5 +442,7 @@
         private System.Windows.Forms.RadioButton rbPostOrder;
         private System.Windows.Forms.RadioButton rbPreOrder;
         private System.Windows.Forms.RadioButton rbInOrder;
+        private System.Windows.Forms.TreeView tvDatos;
+        private System.Windows.Forms.GroupBox gbTreeView;
     }
 }
