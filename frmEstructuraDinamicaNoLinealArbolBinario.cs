@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+
 namespace pryEstructuraDatos
 {
     public partial class frmEstructuraDinamicaNoLinealArbolBinario : Form
@@ -33,10 +35,14 @@ namespace pryEstructuraDatos
                     objNodo.Nombre = txtNombreNuevo.Text;
                     objNodo.Tramite = txtTramiteNuevo.Text;
 
-                    SeleccionRecorrido();
-
                     Arbol.Agregar(objNodo);
 
+                    if (Arbol.Raiz != null)
+                    {
+                        Arbol.Equilibrar();
+                    }
+
+                    SeleccionRecorrido();
                     Recorridos();
                 }
                 else
@@ -66,6 +72,7 @@ namespace pryEstructuraDatos
 
                 if (Arbol.Raiz != null)
                 {
+                    Arbol.Equilibrar();
                     InOrderEstado();
                     SeleccionRecorrido();
                     Recorridos();
@@ -75,6 +82,7 @@ namespace pryEstructuraDatos
                     dgvGrilla.Rows.Clear();
                     lsbLista.Items.Clear();
                     cbEliminar.Items.Clear();
+                    tvDatos.Nodes.Clear();
                     txtCodigoNuevo.Focus();
                 }
 
@@ -149,10 +157,26 @@ namespace pryEstructuraDatos
         }
         public void Recorridos()
         {
-            Arbol.Recorrer(dgvGrilla, Ascendente, Recorrido);
-            Arbol.Recorrer(lsbLista, Ascendente, Recorrido);
-            Arbol.Recorrer(cbEliminar, Ascendente, Recorrido);
-            Arbol.Recorrer(tvDatos);
+            if (Arbol.Raiz != null)
+            {
+                StreamWriter Writer = new StreamWriter("./ArbolBinario.csv", false);
+                Arbol.Recorrer(dgvGrilla, Ascendente, Recorrido);
+                Arbol.Recorrer(lsbLista, Ascendente, Recorrido);
+                Arbol.Recorrer(cbEliminar, Ascendente, Recorrido);
+                Arbol.Recorrer(Writer, Ascendente, Recorrido);
+                Arbol.Recorrer(tvDatos, Ascendente, Recorrido);
+                Writer.Close();
+                Writer.Dispose();
+            }
+        }
+        private void btnEquilibrar_Click(object sender, EventArgs e)
+        {
+            if (Arbol.Raiz != null)
+            {
+                Arbol.Equilibrar();
+                SeleccionRecorrido();
+                Recorridos();
+            }
         }
     }
 }

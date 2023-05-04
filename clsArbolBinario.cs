@@ -7,18 +7,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+
 namespace pryEstructuraDatos
 {
     internal class clsArbolBinario
     {
-        public TreeNode NodoTree;
-        public TreeNode NuevoTree;
-        public TreeNode AuxTree;
+        public clsNodo[] Vector = new clsNodo[100];
+        public int i = 0;
+        public TreeNode Padre;
+        public TreeNode Hijo;
         public clsNodo ini;
         public clsNodo Raiz
         {
             get { return ini; }
             set { ini = value; }
+        }
+        public void Equilibrar()
+        {
+            i = 0;
+            CargarVectorInOrder(Raiz);
+            Raiz = null;
+            EquilibrarArbol(0, i - 1);
         }
         public void Agregar(clsNodo Nuevo)
         {
@@ -173,12 +183,22 @@ namespace pryEstructuraDatos
                 return false;
             }
         }
-        public void Recorrer(TreeView Tree)
+        public void Recorrer(TreeView Arbol, TreeNodeCollection Tree, bool Ascendente, string Recorrido)
         {
-            Tree.Nodes.Clear();
-            NodoTree = Tree.Nodes.Add(Raiz.Codigo.ToString());
-
-            RecorrerTree(Tree, Raiz);
+            Arbol.Nodes.Clear();
+            if (Recorrido == "InOrder")
+            {
+                if (Ascendente == true) InOrderAcs(Tree, Raiz);
+                else if (Ascendente == false) InOrderDes(Tree, Raiz);
+            }
+            else if (Recorrido == "PostOrder")
+            {
+                PostOrder(Tree, Raiz);
+            }
+            else if (Recorrido == "PreOrder")
+            {
+                PreOrder(Tree, Raiz);
+            }
         }
         public void Recorrer(ListBox Lista, bool Ascendente, string Recorrido)
         {
@@ -214,6 +234,22 @@ namespace pryEstructuraDatos
                 PreOrder(Combo, Raiz);
             }
         }
+        public void Recorrer(StreamWriter Writer, bool Ascendente, string Recorrido)
+        {
+            if (Recorrido == "InOrder")
+            {
+                if (Ascendente == true) InOrderAcs(Writer, Raiz);
+                else if (Ascendente == false) InOrderDes(Writer, Raiz);
+            }
+            else if (Recorrido == "PostOrder")
+            {
+                PostOrder(Writer, Raiz);
+            }
+            else if (Recorrido == "PreOrder")
+            {
+                PreOrder(Writer, Raiz);
+            }
+        }
         public void Recorrer(DataGridView Grilla, bool Ascendente, string Recorrido)
         {
             Grilla.Rows.Clear();
@@ -231,90 +267,181 @@ namespace pryEstructuraDatos
                 PreOrder(Grilla, Raiz);
             }
         }
-        public void RecorrerTree(TreeView Tree, clsNodo Nodo)
+        public void Recorrer(TreeView Tree, bool Ascendente, string Recorrido)
         {
-            if (Nodo.Derecha != null)
+            Tree.Nodes.Clear();
+            if (Recorrido == "InOrder")
             {
-                NuevoTree = NodoTree.Nodes.Add(Nodo.Derecha.Codigo.ToString());
-                RecorrerTree(Tree, Nodo.Derecha);
+                if (Ascendente == true) InOrderAcs(Tree.Nodes, Raiz);
+                else if (Ascendente == false) InOrderDes(Tree.Nodes, Raiz);
             }
-            if (Nodo.Izquierda != null)
+            else if (Recorrido == "PostOrder")
             {
-                NuevoTree = NodoTree.Nodes.Add(Nodo.Izquierda.Codigo.ToString());
-                RecorrerTree(Tree, Nodo.Izquierda);
+                PostOrder(Tree.Nodes, Raiz);
+            }
+            else if (Recorrido == "PreOrder")
+            {
+                PreOrder(Tree.Nodes, Raiz);
             }
         }
-        public void InOrderAcs(ListBox Lista, clsNodo Raiz)
+        private void InOrderAcs(ListBox Lista, clsNodo Raiz)
         {
             if (Raiz.Izquierda != null) InOrderAcs(Lista, Raiz.Izquierda);
             Lista.Items.Add(Raiz.Codigo + " " + Raiz.Nombre + " " + Raiz.Tramite);
             if (Raiz.Derecha != null) InOrderAcs(Lista, Raiz.Derecha);
         }
-        public void InOrderAcs(ComboBox Combo, clsNodo Raiz)
+        private void InOrderAcs(ComboBox Combo, clsNodo Raiz)
         {
             if (Raiz.Izquierda != null) InOrderAcs(Combo, Raiz.Izquierda);
             Combo.Items.Add(Raiz.Codigo);
             if (Raiz.Derecha != null) InOrderAcs(Combo, Raiz.Derecha);
         }
-        public void InOrderAcs(DataGridView Grilla, clsNodo Raiz)
+        private void InOrderAcs(StreamWriter Writer, clsNodo Raiz)
+        {
+            if (Raiz.Izquierda != null) InOrderAcs(Writer, Raiz.Izquierda);
+            Writer.Write (Raiz.Codigo);
+            Writer.Write (";");
+            Writer.Write (Raiz.Nombre);
+            Writer.Write (";");
+            Writer.WriteLine (Raiz.Tramite);
+            if (Raiz.Derecha != null) InOrderAcs(Writer, Raiz.Derecha);
+        }
+        private void InOrderAcs(DataGridView Grilla, clsNodo Raiz)
         {
             if (Raiz.Izquierda != null) InOrderAcs(Grilla, Raiz.Izquierda);
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Derecha != null) InOrderAcs(Grilla, Raiz.Derecha);
         }
-        public void InOrderDes(ListBox Lista, clsNodo Raiz)
+        private void InOrderAcs(TreeNodeCollection Tree, clsNodo Raiz)
+        {
+            if (Raiz.Izquierda != null) InOrderAcs(Hijo.Nodes, Raiz.Izquierda);
+            Hijo = Tree.Add(Raiz.Codigo.ToString());
+            if (Raiz.Derecha != null) InOrderAcs(Hijo.Nodes, Raiz.Derecha);
+        }
+        private void InOrderDes(ListBox Lista, clsNodo Raiz)
         {
             if (Raiz.Derecha != null) InOrderDes(Lista, Raiz.Derecha);
             Lista.Items.Add(Raiz.Codigo + " " + Raiz.Nombre + " " + Raiz.Tramite);
             if (Raiz.Izquierda != null) InOrderDes(Lista, Raiz.Izquierda);
         }
-        public void InOrderDes(ComboBox Combo, clsNodo Raiz)
+        private void InOrderDes(ComboBox Combo, clsNodo Raiz)
         {
             if (Raiz.Derecha != null) InOrderDes(Combo, Raiz.Derecha);
             Combo.Items.Add(Raiz.Codigo);
             if (Raiz.Izquierda != null) InOrderDes(Combo, Raiz.Izquierda);
         }
-        public void InOrderDes(DataGridView Grilla, clsNodo Raiz)
+        private void InOrderDes(StreamWriter Writer, clsNodo Raiz)
+        {
+            if (Raiz.Derecha != null) InOrderDes(Writer, Raiz.Derecha);
+            Writer.Write(Raiz.Codigo);
+            Writer.Write(";");
+            Writer.Write(Raiz.Nombre);
+            Writer.Write(";");
+            Writer.WriteLine(Raiz.Tramite);
+            if (Raiz.Izquierda != null) InOrderDes(Writer, Raiz.Izquierda);
+        }
+        private void InOrderDes(DataGridView Grilla, clsNodo Raiz)
         {
             if (Raiz.Derecha != null) InOrderDes(Grilla, Raiz.Derecha);
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Izquierda != null) InOrderDes(Grilla, Raiz.Izquierda);
         }
-        public void PreOrder(ListBox Lista, clsNodo Raiz)
+        private void InOrderDes (TreeNodeCollection Tree, clsNodo Raiz)
+        {
+            if (Raiz.Derecha != null) InOrderDes(Hijo.Nodes, Raiz.Derecha);
+            Hijo = Tree.Add(Raiz.Codigo.ToString());
+            if (Raiz.Izquierda != null) InOrderDes(Hijo.Nodes, Raiz.Izquierda);
+        }
+        private void PreOrder(ListBox Lista, clsNodo Raiz)
         {
             Lista.Items.Add(Raiz.Codigo + " " + Raiz.Nombre + " " + Raiz.Tramite);
             if (Raiz.Izquierda != null) PreOrder(Lista, Raiz.Izquierda);
             if (Raiz.Derecha != null) PreOrder(Lista, Raiz.Derecha);
         }
-        public void PreOrder(ComboBox Combo, clsNodo Raiz)
+        private void PreOrder(ComboBox Combo, clsNodo Raiz)
         {
             Combo.Items.Add(Raiz.Codigo);
             if (Raiz.Izquierda != null) PreOrder(Combo, Raiz.Izquierda);
             if (Raiz.Derecha != null) PreOrder(Combo, Raiz.Derecha);
         }
-        public void PreOrder(DataGridView Grilla, clsNodo Raiz)
+        private void PreOrder(StreamWriter Writer, clsNodo Raiz)
+        {
+            Writer.Write(Raiz.Codigo);
+            Writer.Write(";");
+            Writer.Write(Raiz.Nombre);
+            Writer.Write(";");
+            Writer.WriteLine(Raiz.Tramite);
+            if (Raiz.Izquierda != null) PreOrder(Writer, Raiz.Izquierda);
+            if (Raiz.Derecha != null) PreOrder(Writer, Raiz.Derecha);
+        }
+        private void PreOrder(DataGridView Grilla, clsNodo Raiz)
         {
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Izquierda != null) PreOrder(Grilla, Raiz.Izquierda);
             if (Raiz.Derecha != null) PreOrder(Grilla, Raiz.Derecha);
         }
-        public void PostOrder(ListBox Lista, clsNodo Raiz)
+        private void PreOrder(TreeNodeCollection Tree, clsNodo Raiz)
+        {
+            Hijo = Tree.Add(Raiz.Codigo.ToString());
+            if (Raiz.Derecha != null) PreOrder(Hijo.Nodes, Raiz.Derecha);
+            if (Raiz.Izquierda != null) PreOrder(Hijo.Nodes, Raiz.Izquierda);
+        }
+        private void PostOrder(ListBox Lista, clsNodo Raiz)
         {
             if (Raiz.Izquierda != null) PostOrder(Lista, Raiz.Izquierda);
             if (Raiz.Derecha != null) PostOrder(Lista, Raiz.Derecha);
             Lista.Items.Add(Raiz.Codigo + " " + Raiz.Nombre + " " + Raiz.Tramite);
         }
-        public void PostOrder(ComboBox Combo, clsNodo Raiz)
+        private void PostOrder(ComboBox Combo, clsNodo Raiz)
         {
             if (Raiz.Izquierda != null) PostOrder(Combo, Raiz.Izquierda);
             if (Raiz.Derecha != null) PostOrder(Combo, Raiz.Derecha);
             Combo.Items.Add(Raiz.Codigo);
         }
-        public void PostOrder(DataGridView Grilla, clsNodo Raiz)
+        private void PostOrder(StreamWriter Writer, clsNodo Raiz)
+        {
+            if (Raiz.Izquierda != null) PostOrder(Writer, Raiz.Izquierda);
+            if (Raiz.Derecha != null) PostOrder(Writer, Raiz.Derecha);
+            Writer.Write(Raiz.Codigo);
+            Writer.Write(";");
+            Writer.Write(Raiz.Nombre);
+            Writer.Write(";");
+            Writer.WriteLine(Raiz.Tramite);
+        }
+        private void PostOrder(DataGridView Grilla, clsNodo Raiz)
         {
             if (Raiz.Izquierda != null) PostOrder(Grilla, Raiz.Izquierda);
             if (Raiz.Derecha != null) PostOrder(Grilla, Raiz.Derecha);
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
+        }
+        private void PostOrder(TreeNodeCollection Tree, clsNodo Raiz)
+        {
+            if (Raiz.Derecha != null) PostOrder(Hijo.Nodes, Raiz.Derecha);
+            if (Raiz.Izquierda != null) PostOrder(Hijo.Nodes, Raiz.Izquierda);
+            Hijo = Tree.Add(Raiz.Codigo.ToString());
+        }
+        private void CargarVectorInOrder(clsNodo NodoPadre)
+        {
+            if (NodoPadre.Izquierda != null)
+            {
+                CargarVectorInOrder(NodoPadre.Izquierda);
+            }
+            Vector[i] = NodoPadre;
+            i = i + 1;
+            if (NodoPadre.Derecha != null)
+            {
+                CargarVectorInOrder(NodoPadre.Derecha);
+            }
+        }
+        private void EquilibrarArbol(int ini, int fin)
+        {
+            int m = (ini + fin) / 2;
+            if (ini <= fin)
+            {
+                Agregar(Vector[m]);
+                EquilibrarArbol(ini, m - 1);
+                EquilibrarArbol(m + 1, fin);
+            }
         }
     }
 }
