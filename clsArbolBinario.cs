@@ -15,8 +15,6 @@ namespace pryEstructuraDatos
     {
         public clsNodo[] Vector = new clsNodo[100];
         public int i = 0;
-        public TreeNode Padre;
-        public TreeNode Hijo;
         public clsNodo ini;
         public clsNodo Raiz
         {
@@ -183,23 +181,6 @@ namespace pryEstructuraDatos
                 return false;
             }
         }
-        public void Recorrer(TreeView Arbol, TreeNodeCollection Tree, bool Ascendente, string Recorrido)
-        {
-            Arbol.Nodes.Clear();
-            if (Recorrido == "InOrder")
-            {
-                if (Ascendente == true) InOrderAcs(Tree, Raiz);
-                else if (Ascendente == false) InOrderDes(Tree, Raiz);
-            }
-            else if (Recorrido == "PostOrder")
-            {
-                PostOrder(Tree, Raiz);
-            }
-            else if (Recorrido == "PreOrder")
-            {
-                PreOrder(Tree, Raiz);
-            }
-        }
         public void Recorrer(ListBox Lista, bool Ascendente, string Recorrido)
         {
             Lista.Items.Clear ();
@@ -270,19 +251,7 @@ namespace pryEstructuraDatos
         public void Recorrer(TreeView Tree, bool Ascendente, string Recorrido)
         {
             Tree.Nodes.Clear();
-            if (Recorrido == "InOrder")
-            {
-                if (Ascendente == true) InOrderAcs(Tree.Nodes, Raiz);
-                else if (Ascendente == false) InOrderDes(Tree.Nodes, Raiz);
-            }
-            else if (Recorrido == "PostOrder")
-            {
-                PostOrder(Tree.Nodes, Raiz);
-            }
-            else if (Recorrido == "PreOrder")
-            {
-                PreOrder(Tree.Nodes, Raiz);
-            }
+            InOrderAcs(Tree.Nodes, Raiz);
         }
         private void InOrderAcs(ListBox Lista, clsNodo Raiz)
         {
@@ -312,11 +281,11 @@ namespace pryEstructuraDatos
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Derecha != null) InOrderAcs(Grilla, Raiz.Derecha);
         }
-        private void InOrderAcs(TreeNodeCollection Tree, clsNodo Raiz)
+        private void InOrderAcs(TreeNodeCollection NodoPadre, clsNodo Raiz)
         {
-            if (Raiz.Izquierda != null) InOrderAcs(Hijo.Nodes, Raiz.Izquierda);
-            Hijo = Tree.Add(Raiz.Codigo.ToString());
-            if (Raiz.Derecha != null) InOrderAcs(Hijo.Nodes, Raiz.Derecha);
+            TreeNode NuevoNodo = NodoPadre.Add(Raiz.Codigo.ToString());
+            if (Raiz.Izquierda != null) InOrderAcs(NuevoNodo.Nodes, Raiz.Izquierda);
+            if (Raiz.Derecha != null) InOrderAcs(NuevoNodo.Nodes, Raiz.Derecha);
         }
         private void InOrderDes(ListBox Lista, clsNodo Raiz)
         {
@@ -346,11 +315,8 @@ namespace pryEstructuraDatos
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Izquierda != null) InOrderDes(Grilla, Raiz.Izquierda);
         }
-        private void InOrderDes (TreeNodeCollection Tree, clsNodo Raiz)
+        private void InOrderDes (TreeNodeCollection NodoPadre, clsNodo Raiz)
         {
-            if (Raiz.Derecha != null) InOrderDes(Hijo.Nodes, Raiz.Derecha);
-            Hijo = Tree.Add(Raiz.Codigo.ToString());
-            if (Raiz.Izquierda != null) InOrderDes(Hijo.Nodes, Raiz.Izquierda);
         }
         private void PreOrder(ListBox Lista, clsNodo Raiz)
         {
@@ -380,11 +346,8 @@ namespace pryEstructuraDatos
             if (Raiz.Izquierda != null) PreOrder(Grilla, Raiz.Izquierda);
             if (Raiz.Derecha != null) PreOrder(Grilla, Raiz.Derecha);
         }
-        private void PreOrder(TreeNodeCollection Tree, clsNodo Raiz)
+        private void PreOrder(TreeNodeCollection NodoPadre, clsNodo Raiz)
         {
-            Hijo = Tree.Add(Raiz.Codigo.ToString());
-            if (Raiz.Derecha != null) PreOrder(Hijo.Nodes, Raiz.Derecha);
-            if (Raiz.Izquierda != null) PreOrder(Hijo.Nodes, Raiz.Izquierda);
         }
         private void PostOrder(ListBox Lista, clsNodo Raiz)
         {
@@ -414,11 +377,8 @@ namespace pryEstructuraDatos
             if (Raiz.Derecha != null) PostOrder(Grilla, Raiz.Derecha);
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
         }
-        private void PostOrder(TreeNodeCollection Tree, clsNodo Raiz)
+        private void PostOrder(TreeNodeCollection NodoPadre, clsNodo Raiz)
         {
-            if (Raiz.Derecha != null) PostOrder(Hijo.Nodes, Raiz.Derecha);
-            if (Raiz.Izquierda != null) PostOrder(Hijo.Nodes, Raiz.Izquierda);
-            Hijo = Tree.Add(Raiz.Codigo.ToString());
         }
         private void CargarVectorInOrder(clsNodo NodoPadre)
         {

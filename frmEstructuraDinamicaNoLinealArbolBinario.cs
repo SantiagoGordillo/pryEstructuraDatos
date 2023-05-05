@@ -160,13 +160,13 @@ namespace pryEstructuraDatos
             if (Arbol.Raiz != null)
             {
                 StreamWriter Writer = new StreamWriter("./ArbolBinario.csv", false);
+                Arbol.Recorrer(Writer, Ascendente, Recorrido);
+                Writer.Close();
+                Writer.Dispose();
                 Arbol.Recorrer(dgvGrilla, Ascendente, Recorrido);
                 Arbol.Recorrer(lsbLista, Ascendente, Recorrido);
                 Arbol.Recorrer(cbEliminar, Ascendente, Recorrido);
-                Arbol.Recorrer(Writer, Ascendente, Recorrido);
                 Arbol.Recorrer(tvDatos, Ascendente, Recorrido);
-                Writer.Close();
-                Writer.Dispose();
             }
         }
         private void btnEquilibrar_Click(object sender, EventArgs e)
