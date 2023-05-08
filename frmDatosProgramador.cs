@@ -16,7 +16,6 @@ namespace pryEstructuraDatos
         {
             InitializeComponent();
         }
-
         private void frmDatosProgramador_Load(object sender, EventArgs e)
         {
             lblDNI.Text = "44192777";

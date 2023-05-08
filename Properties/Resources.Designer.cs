@@ -63,16 +63,6 @@ namespace pryEstructuraDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _20210125_200041 {
-            get {
-                object obj = ResourceManager.GetObject("20210125_200041", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap descarga__1_ {
             get {
                 object obj = ResourceManager.GetObject("descarga (1)", resourceCulture);
@@ -86,6 +76,16 @@ namespace pryEstructuraDatos.Properties {
         internal static System.Drawing.Bitmap ed5 {
             get {
                 object obj = ResourceManager.GetObject("ed5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap r {
+            get {
+                object obj = ResourceManager.GetObject("r", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

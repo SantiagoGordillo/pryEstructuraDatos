@@ -13,14 +13,14 @@ namespace pryEstructuraDatos
 {
     internal class clsArbolBinario
     {
-        public clsNodo[] Vector = new clsNodo[100];
-        public int i = 0;
-        public clsNodo ini;
         public clsNodo Raiz
         {
             get { return ini; }
             set { ini = value; }
         }
+        private clsNodo[] Vector = new clsNodo[100];
+        private int i = 0;
+        private clsNodo ini;
         public void Equilibrar()
         {
             i = 0;
@@ -248,7 +248,7 @@ namespace pryEstructuraDatos
                 PreOrder(Grilla, Raiz);
             }
         }
-        public void Recorrer(TreeView Tree, bool Ascendente, string Recorrido)
+        public void Recorrer(TreeView Tree)
         {
             Tree.Nodes.Clear();
             InOrderAcs(Tree.Nodes, Raiz);
@@ -315,9 +315,6 @@ namespace pryEstructuraDatos
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Izquierda != null) InOrderDes(Grilla, Raiz.Izquierda);
         }
-        private void InOrderDes (TreeNodeCollection NodoPadre, clsNodo Raiz)
-        {
-        }
         private void PreOrder(ListBox Lista, clsNodo Raiz)
         {
             Lista.Items.Add(Raiz.Codigo + " " + Raiz.Nombre + " " + Raiz.Tramite);
@@ -346,9 +343,6 @@ namespace pryEstructuraDatos
             if (Raiz.Izquierda != null) PreOrder(Grilla, Raiz.Izquierda);
             if (Raiz.Derecha != null) PreOrder(Grilla, Raiz.Derecha);
         }
-        private void PreOrder(TreeNodeCollection NodoPadre, clsNodo Raiz)
-        {
-        }
         private void PostOrder(ListBox Lista, clsNodo Raiz)
         {
             if (Raiz.Izquierda != null) PostOrder(Lista, Raiz.Izquierda);
@@ -376,9 +370,6 @@ namespace pryEstructuraDatos
             if (Raiz.Izquierda != null) PostOrder(Grilla, Raiz.Izquierda);
             if (Raiz.Derecha != null) PostOrder(Grilla, Raiz.Derecha);
             Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
-        }
-        private void PostOrder(TreeNodeCollection NodoPadre, clsNodo Raiz)
-        {
         }
         private void CargarVectorInOrder(clsNodo NodoPadre)
         {

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatosProgramador));
-            this.pbProgramador = new System.Windows.Forms.PictureBox();
             this.lblNombreProgramador = new System.Windows.Forms.Label();
             this.lblDNIProgramador = new System.Windows.Forms.Label();
             this.lblMateriaProgramador = new System.Windows.Forms.Label();
@@ -38,18 +36,9 @@
             this.lblMateria = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDNI = new System.Windows.Forms.Label();
+            this.pbProgramador = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbProgramador)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbProgramador
-            // 
-            this.pbProgramador.Image = ((System.Drawing.Image)(resources.GetObject("pbProgramador.Image")));
-            this.pbProgramador.Location = new System.Drawing.Point(58, 38);
-            this.pbProgramador.Name = "pbProgramador";
-            this.pbProgramador.Size = new System.Drawing.Size(183, 295);
-            this.pbProgramador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProgramador.TabIndex = 0;
-            this.pbProgramador.TabStop = false;
             // 
             // lblNombreProgramador
             // 
@@ -123,12 +112,23 @@
             this.lblDNI.TabIndex = 5;
             this.lblDNI.Text = "-";
             // 
+            // pbProgramador
+            // 
+            this.pbProgramador.Image = global::pryEstructuraDatos.Properties.Resources.r;
+            this.pbProgramador.Location = new System.Drawing.Point(80, 34);
+            this.pbProgramador.Name = "pbProgramador";
+            this.pbProgramador.Size = new System.Drawing.Size(159, 283);
+            this.pbProgramador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProgramador.TabIndex = 9;
+            this.pbProgramador.TabStop = false;
+            // 
             // frmDatosProgramador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(526, 365);
+            this.Controls.Add(this.pbProgramador);
             this.Controls.Add(this.lblCarrera);
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.lblNombre);
@@ -137,7 +137,6 @@
             this.Controls.Add(this.lblMateriaProgramador);
             this.Controls.Add(this.lblDNIProgramador);
             this.Controls.Add(this.lblNombreProgramador);
-            this.Controls.Add(this.pbProgramador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -152,8 +151,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pbProgramador;
         private System.Windows.Forms.Label lblNombreProgramador;
         private System.Windows.Forms.Label lblDNIProgramador;
         private System.Windows.Forms.Label lblMateriaProgramador;
@@ -162,5 +159,6 @@
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.PictureBox pbProgramador;
     }
 }

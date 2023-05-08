@@ -19,7 +19,7 @@ namespace pryEstructuraDatos
         {
             InitializeComponent();
         }
-
+        StreamWriter Writer;
         public bool Ascendente = true;
         public string Recorrido;
         clsArbolBinario Arbol = new clsArbolBinario();
@@ -57,15 +57,15 @@ namespace pryEstructuraDatos
             }
             else
             {
-                if (txtTramiteNuevo.Text == "") txtTramiteNuevo.Focus();
+                if (txtCodigoNuevo.Text == "") txtCodigoNuevo.Focus();
                 else if (txtNombreNuevo.Text == "") txtNombreNuevo.Focus();
-                else if (txtCodigoNuevo.Text == "") txtCodigoNuevo.Focus();
+                else if (txtTramiteNuevo.Text == "") txtTramiteNuevo.Focus();
                 MessageBox.Show("Complete todos los campos");
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if ((Arbol.Raiz != null) && (cbEliminar.Text != ""))
+            if ((Arbol.Raiz != null) && (cbEliminar.SelectedIndex != -1))
             {
 
                 Arbol.Eliminar(Convert.ToInt32(cbEliminar.SelectedItem));
@@ -79,21 +79,18 @@ namespace pryEstructuraDatos
                 }
                 else
                 {
+                    File.Delete("./ArbolBinario.csv");
                     dgvGrilla.Rows.Clear();
                     lsbLista.Items.Clear();
                     cbEliminar.Items.Clear();
                     tvDatos.Nodes.Clear();
-                    txtCodigoNuevo.Focus();
                 }
-
-                txtCodigoNuevo.Focus();
             }
             else
             {
                 MessageBox.Show("No se encontro ningun dato", "Error");
-
-                txtCodigoNuevo.Focus();
             }
+            txtCodigoNuevo.Focus();
         }
         private void rbInOrder_CheckedChanged(object sender, EventArgs e)
         {
@@ -159,23 +156,15 @@ namespace pryEstructuraDatos
         {
             if (Arbol.Raiz != null)
             {
-                StreamWriter Writer = new StreamWriter("./ArbolBinario.csv", false);
+                Writer = new StreamWriter("./ArbolBinario.csv", false);
                 Arbol.Recorrer(Writer, Ascendente, Recorrido);
                 Writer.Close();
                 Writer.Dispose();
                 Arbol.Recorrer(dgvGrilla, Ascendente, Recorrido);
                 Arbol.Recorrer(lsbLista, Ascendente, Recorrido);
                 Arbol.Recorrer(cbEliminar, Ascendente, Recorrido);
-                Arbol.Recorrer(tvDatos, Ascendente, Recorrido);
-            }
-        }
-        private void btnEquilibrar_Click(object sender, EventArgs e)
-        {
-            if (Arbol.Raiz != null)
-            {
-                Arbol.Equilibrar();
-                SeleccionRecorrido();
-                Recorridos();
+                Arbol.Recorrer(tvDatos);
+                tvDatos.ExpandAll();
             }
         }
     }
