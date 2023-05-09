@@ -19,10 +19,11 @@ namespace pryEstructuraDatos
         {
             InitializeComponent();
         }
+        clsArbolBinario Arbol = new clsArbolBinario();
         StreamWriter Writer;
         public bool Ascendente = true;
         public string Recorrido;
-        clsArbolBinario Arbol = new clsArbolBinario();
+        public int NodoEliminar;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
@@ -65,19 +66,14 @@ namespace pryEstructuraDatos
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if ((Arbol.Raiz != null) && (cbEliminar.SelectedIndex != -1))
+            if (Arbol.Raiz != null && cbEliminar.SelectedIndex != -1)
             {
+                Arbol.Equilibrar(Convert.ToInt32(cbEliminar.SelectedItem));
 
-                Arbol.Eliminar(Convert.ToInt32(cbEliminar.SelectedItem));
+                SeleccionRecorrido();
+                Recorridos();
 
-                if (Arbol.Raiz != null)
-                {
-                    Arbol.Equilibrar();
-                    InOrderEstado();
-                    SeleccionRecorrido();
-                    Recorridos();
-                }
-                else
+                if (Arbol.Raiz == null)
                 {
                     File.Delete("./ArbolBinario.csv");
                     dgvGrilla.Rows.Clear();

@@ -19,10 +19,19 @@ namespace pryEstructuraDatos
             set { ini = value; }
         }
         private clsNodo[] Vector = new clsNodo[100];
-        private int i = 0;
         private clsNodo ini;
+        private int i = 0;
+        private int NodoEliminar;
         public void Equilibrar()
         {
+            i = 0;
+            CargarVectorInOrder(Raiz);
+            Raiz = null;
+            EquilibrarArbol(0, i - 1);
+        }
+        public void Equilibrar(int Nodo)
+        {
+            NodoEliminar = Nodo;
             i = 0;
             CargarVectorInOrder(Raiz);
             Raiz = null;
@@ -60,101 +69,6 @@ namespace pryEstructuraDatos
                 else
                 {
                     NodoPadre.Derecha = Nuevo;
-                }
-            }
-        }
-        public void Eliminar (Int32 Codigo)
-        {
-            clsNodo NodoPadre = Raiz;
-            clsNodo Aux = Raiz;
-
-            if (Raiz != null && Raiz.Codigo == Codigo)
-            {
-                if (Raiz.Izquierda == null && Raiz.Derecha == null)
-                {
-                    Raiz = null;
-                }
-                else if (Raiz.Izquierda != null && Raiz.Derecha == null)
-                {
-                    Raiz = Raiz.Izquierda;
-                }
-                else if (Raiz.Izquierda == null && Raiz.Derecha != null)
-                {
-                    Raiz = Raiz.Derecha;
-                }
-                else
-                {
-                    Aux = Raiz.Izquierda;
-                    while (Aux.Derecha != null)
-                    {
-                        Aux = Aux.Derecha;
-                    }
-                    Aux.Derecha = Raiz.Derecha;
-                    Raiz = Raiz.Izquierda;
-                }
-            }
-            else
-            {
-                while (Aux != null && Aux.Codigo != Codigo)
-                {
-                    NodoPadre = Aux;
-                    if (Codigo < Aux.Codigo)
-                    {
-                        Aux = Aux.Izquierda;
-                    }
-                    else
-                    {
-                        Aux = Aux.Derecha;
-                    }
-                }
-                if (Aux != null)
-                {
-                    if (Aux.Izquierda == null && Aux.Derecha == null)
-                    {
-                        if (Codigo < NodoPadre.Codigo)
-                        {
-                            NodoPadre.Izquierda = null;
-                        }
-                        else
-                        {
-                            NodoPadre.Derecha = null;
-                        }
-                    }
-                    else if (Aux.Izquierda != null && Aux.Derecha == null)
-                    {
-                        if (Codigo < NodoPadre.Codigo)
-                        {
-                            NodoPadre.Izquierda = Aux.Izquierda;
-                        }
-                        else
-                        {
-                            NodoPadre.Derecha = Aux.Izquierda;
-                        }
-                    }
-                    else if (Aux.Izquierda == null && Aux.Derecha != null)
-                    {
-                        if (Codigo < NodoPadre.Codigo)
-                        {
-                            NodoPadre.Izquierda = Aux.Derecha;
-                        }
-                        else
-                        {
-                            NodoPadre.Derecha = Aux.Derecha;
-                        }
-                    }
-                    else if (Aux.Izquierda != null && Aux.Derecha != null)
-                    {
-                        if (Codigo < NodoPadre.Codigo)
-                        {
-                            NodoPadre.Izquierda = Aux.Izquierda;
-                            NodoPadre.Izquierda.Derecha = Aux.Derecha;
-                        }
-                        else
-                        {
-                            NodoPadre.Derecha = Aux.Izquierda;
-                            NodoPadre.Derecha.Derecha = Aux.Derecha;
-                        }
-                    }
                 }
             }
         }
@@ -377,8 +291,11 @@ namespace pryEstructuraDatos
             {
                 CargarVectorInOrder(NodoPadre.Izquierda);
             }
-            Vector[i] = NodoPadre;
-            i = i + 1;
+            if (NodoPadre.Codigo != NodoEliminar)
+            {
+                Vector[i] = NodoPadre;
+                i = i + 1;
+            }
             if (NodoPadre.Derecha != null)
             {
                 CargarVectorInOrder(NodoPadre.Derecha);
