@@ -20,7 +20,7 @@ namespace pryEstructuraDatos
         }
         private clsNodo[] Vector = new clsNodo[100];
         private clsNodo ini;
-        private int i = 0;
+        private int i;
         private int NodoEliminar;
         public void Equilibrar()
         {
@@ -294,7 +294,7 @@ namespace pryEstructuraDatos
             if (NodoPadre.Codigo != NodoEliminar)
             {
                 Vector[i] = NodoPadre;
-                i = i + 1;
+                i ++;
             }
             if (NodoPadre.Derecha != null)
             {
