@@ -15,13 +15,11 @@ namespace pryEstructuraDatos
         public clsNodo ult;
         public clsNodo Aux;
         public clsNodo Ant;
-
         public clsNodo Primero // Crea un puntero para la primera posicion
         {
             get { return pri; }
             set { pri = value;  }
         }
-
         public clsNodo Ultimo // Crea un puntero para la ultima posicion
         {
             get { return ult; }
@@ -68,7 +66,22 @@ namespace pryEstructuraDatos
                 }
             }
         }
-
+        public bool Buscar(int Codigo)
+        {
+            clsNodo Aux = Primero;
+            while (Aux != null && Aux.Codigo != Codigo)
+            {
+                Aux = Aux.Siguiente;
+            }
+            if (Aux != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Eliminar(Int32 Codigo) // Elimina el nodo segun el codigo recibido
         {
             if (Primero.Codigo == Codigo && Ultimo == Primero) // Si el codigo del primero es igual al codigo recibido y el ultimo es igual al primero
@@ -106,7 +119,6 @@ namespace pryEstructuraDatos
                 }
             }
         }
-
         public void Recorrer(DataGridView grilla) // Recorre los datos con la grilla
         {
             Aux = Primero; // El Aux apunta al primero
@@ -117,7 +129,6 @@ namespace pryEstructuraDatos
                 Aux = Aux.Siguiente; // El Aux apunta al siguiente
             }
         }
-
         public void Recorrer(ListBox lista) // Recorre los datos con la lista 
         {
             Aux = Primero; // El Aux apunta al primero
@@ -128,18 +139,16 @@ namespace pryEstructuraDatos
                 Aux = Aux.Siguiente; // El Aux apunta al siguiente
             }
         }
-
         public void Recorrer(ComboBox combo) // Recorre los datos con el ComboBox
         {
             Aux = Primero; // El Aux apunta al primero
             combo.Items.Clear(); // Limpia el ComboBox
             while (Aux != null) // Mientras el Aux sea diferente de nulo
             {
-                combo.Items.Add(Aux.Nombre); // Agrega los datos al ComboBox
+                combo.Items.Add(Aux.Codigo); // Agrega los datos al ComboBox
                 Aux = Aux.Siguiente; // El Aux apunta al siguiente
             }
         }
-
         public void RecorrerDes(DataGridView grilla) // Recorre los datos en sentido inverso con la grilla
         {
             Aux = Ultimo; // El Aux apunta al ultimo
@@ -150,7 +159,6 @@ namespace pryEstructuraDatos
                 Aux = Aux.Anterior; // El Aux apunta al anterior
             }
         }
-
         public void RecorrerDes(ListBox lista) // Recorre los datos en sentido inverso con la lista
         {
             Aux = Ultimo; // El Aux apunta al ultimo
@@ -161,14 +169,13 @@ namespace pryEstructuraDatos
                 Aux = Aux.Anterior; // El Aux apunta al anterior
             }
         }
-
         public void RecorrerDes(ComboBox combo) // Recorre los datos en sentido inverso con el ComboBox
         {
             Aux = Ultimo; // El Aux apunta al ultimo
             combo.Items.Clear(); // Limpia el ComboBox
             while (Aux != null) // Mientras el Aux sea diferente de nulo
             {
-                combo.Items.Add(Aux.Nombre); // Agrega los datos al ComboBox
+                combo.Items.Add(Aux.Codigo); // Agrega los datos al ComboBox
                 Aux = Aux.Anterior; // El Aux apunta al anterior
             }
         }

@@ -11,7 +11,6 @@ namespace pryEstructuraDatos
     {
         public clsNodo Primero; // Declaramos el primer Nodo
         public clsNodo Aux; // Declaramos un nodo auxiliar
-
         public void Agregar(clsNodo Nuevo) 
         {
             if (Primero == null)
@@ -24,7 +23,22 @@ namespace pryEstructuraDatos
                 Primero = Nuevo;
             }
         }
-
+        public bool Buscar(int Codigo)
+        {
+            clsNodo Aux = Primero;
+            while (Aux != null && Aux.Codigo != Codigo)
+            {
+                Aux = Aux.Siguiente;
+            }
+            if (Aux != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Eliminar()
         {
             if (Primero != null)
@@ -32,7 +46,6 @@ namespace pryEstructuraDatos
                 Primero = Primero.Siguiente;
             }
         }
-
         public void Recorrer(DataGridView grilla)
         {
             Aux = Primero;
@@ -43,7 +56,6 @@ namespace pryEstructuraDatos
                 Aux = Aux.Siguiente;
             }
         }
-
         public void Recorrer(ListBox lista)
         {
             Aux = Primero;
@@ -51,17 +63,6 @@ namespace pryEstructuraDatos
             while (Aux != null)
             {
                 lista.Items.Add(Aux.Codigo + " " + Aux.Nombre + " " + Aux.Tramite);
-                Aux = Aux.Siguiente;
-            }
-        }
-
-        public void Recorrer(ComboBox combo)
-        {
-            Aux = Primero;
-            combo.Items.Clear();
-            while (Aux != null)
-            {
-                combo.Items.Add(Aux.Nombre);
                 Aux = Aux.Siguiente;
             }
         }

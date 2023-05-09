@@ -17,38 +17,68 @@ namespace pryEstructuraDatos
             InitializeComponent();
         }
 
-        clsPila Fila = new clsPila();
+        clsPila Pila = new clsPila();
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo objNodo = new clsNodo();
+            try
+            {
+                if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
+                {
+                    if (Pila.Buscar(Convert.ToInt32(txtCodigoNuevo.Text)) == false)
+                    {
+                        clsNodo objNodo = new clsNodo();
 
-            objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
-            objNodo.Nombre = txtNombreNuevo.Text;
-            objNodo.Tramite = txtTramiteNuevo.Text;
+                        objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
+                        objNodo.Nombre = txtNombreNuevo.Text;
+                        objNodo.Tramite = txtTramiteNuevo.Text;
 
-            Fila.Agregar(objNodo);
-            Fila.Recorrer(dgvGrilla);
-            Fila.Recorrer(lsbLista);
+                        Pila.Agregar(objNodo);
+                        Pila.Recorrer(dgvGrilla);
+                        Pila.Recorrer(lsbLista);
 
-            txtCodigoNuevo.Text = "";
-            txtNombreNuevo.Text = "";
-            txtTramiteNuevo.Text = "";
-            txtCodigoNuevo.Focus();
+                        txtCodigoNuevo.Text = "";
+                        txtNombreNuevo.Text = "";
+                        txtTramiteNuevo.Text = "";
+                        txtCodigoNuevo.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El codigo ya existe", "Error");
+                    }
+
+                    txtCodigoNuevo.Text = "";
+                    txtNombreNuevo.Text = "";
+                    txtTramiteNuevo.Text = "";
+                    txtCodigoNuevo.Focus();
+                }
+                else
+                {
+                    if (txtCodigoNuevo.Text == "") txtCodigoNuevo.Focus();
+                    else if (txtNombreNuevo.Text == "") txtNombreNuevo.Focus();
+                    else if (txtTramiteNuevo.Text == "") txtTramiteNuevo.Focus();
+                    MessageBox.Show("Complete todos los campos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Codigo invalido");
+                txtCodigoNuevo.Text = "";
+                txtCodigoNuevo.Focus();
+            }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (Fila.Primero != null)
+            if (Pila.Primero != null)
             {
-                txtCodigoEliminar.Text = Fila.Primero.Codigo.ToString();
-                txtNombreEliminar.Text = Fila.Primero.Nombre;
-                txtTramiteEliminar.Text = Fila.Primero.Tramite;
+                txtCodigoEliminar.Text = Pila.Primero.Codigo.ToString();
+                txtNombreEliminar.Text = Pila.Primero.Nombre;
+                txtTramiteEliminar.Text = Pila.Primero.Tramite;
 
-                Fila.Eliminar();
+                Pila.Eliminar();
 
-                Fila.Recorrer(dgvGrilla);
-                Fila.Recorrer(lsbLista);
+                Pila.Recorrer(dgvGrilla);
+                Pila.Recorrer(lsbLista);
 
                 txtCodigoNuevo.Focus();
             }

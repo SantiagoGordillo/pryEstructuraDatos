@@ -19,49 +19,63 @@ namespace pryEstructuraDatos
         {
             InitializeComponent();
         }
-        clsArbolBinario Arbol = new clsArbolBinario();
-        StreamWriter Writer;
-        public bool Ascendente = true;
+        public bool Ascendente;
         public string Recorrido;
         public int NodoEliminar;
+        clsArbolBinario Arbol;
+        StreamWriter Writer;
+        private void frmEstructuraDinamicaNoLinealArbolBinario_Load(object sender, EventArgs e)
+        {
+            Arbol = new clsArbolBinario();
+            Ascendente = true;
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
+            try
             {
-                if (Arbol.Buscar(Convert.ToInt32(txtCodigoNuevo.Text)) == false)
+                if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
                 {
-                    clsNodo objNodo = new clsNodo();
-
-                    objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
-                    objNodo.Nombre = txtNombreNuevo.Text;
-                    objNodo.Tramite = txtTramiteNuevo.Text;
-
-                    Arbol.Agregar(objNodo);
-
-                    if (Arbol.Raiz != null)
+                    if (Arbol.Buscar(Convert.ToInt32(txtCodigoNuevo.Text)) == false)
                     {
-                        Arbol.Equilibrar();
+                        clsNodo objNodo = new clsNodo();
+
+                        objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
+                        objNodo.Nombre = txtNombreNuevo.Text;
+                        objNodo.Tramite = txtTramiteNuevo.Text;
+
+                        Arbol.Agregar(objNodo);
+
+                        if (Arbol.Raiz != null)
+                        {
+                            Arbol.Equilibrar();
+                        }
+
+                        SeleccionRecorrido();
+                        Recorridos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El codigo ya existe", "Error");
                     }
 
-                    SeleccionRecorrido();
-                    Recorridos();
+                    txtCodigoNuevo.Text = "";
+                    txtNombreNuevo.Text = "";
+                    txtTramiteNuevo.Text = "";
+                    txtCodigoNuevo.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("El codigo ya existe", "Error");
+                    if (txtCodigoNuevo.Text == "") txtCodigoNuevo.Focus();
+                    else if (txtNombreNuevo.Text == "") txtNombreNuevo.Focus();
+                    else if (txtTramiteNuevo.Text == "") txtTramiteNuevo.Focus();
+                    MessageBox.Show("Complete todos los campos");
                 }
-
-                txtCodigoNuevo.Text = "";
-                txtNombreNuevo.Text = "";
-                txtTramiteNuevo.Text = "";
-                txtCodigoNuevo.Focus();
             }
-            else
+            catch (Exception ex)
             {
-                if (txtCodigoNuevo.Text == "") txtCodigoNuevo.Focus();
-                else if (txtNombreNuevo.Text == "") txtNombreNuevo.Focus();
-                else if (txtTramiteNuevo.Text == "") txtTramiteNuevo.Focus();
-                MessageBox.Show("Complete todos los campos");
+                MessageBox.Show("Codigo invalido");
+                txtCodigoNuevo.Text = "";
+                txtCodigoNuevo.Focus();
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -167,6 +181,7 @@ namespace pryEstructuraDatos
         {
             clsNodo InfoNodo = Arbol.Informacion(Convert.ToInt32(e.Node.Text));
             MessageBox.Show("Nombre: " + InfoNodo.Nombre + "  " + "Tramite: " + InfoNodo.Tramite, "Codigo " + InfoNodo.Codigo.ToString());
+            tvDatos.ExpandAll();
         }
     }
 }

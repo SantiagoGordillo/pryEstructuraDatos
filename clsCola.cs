@@ -28,7 +28,22 @@ namespace pryEstructuraDatos
                 Ultimo = Nuevo; // El nuevo pasa a ser Ultimo
             }
         }
-
+        public bool Buscar(int Codigo)
+        {
+            clsNodo Aux = Primero;
+            while (Aux != null && Aux.Codigo != Codigo)
+            {
+                Aux = Aux.Siguiente;
+            }
+            if (Aux != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Eliminar()
         {
             if (Primero == Ultimo) // Si el primero es igual al ultimo:
@@ -36,12 +51,11 @@ namespace pryEstructuraDatos
                 Primero = null; // Se elimina el primero
                 Ultimo = null; // Se elimina el ultimo
             }
-            else // Si no:
+            else
             {
                 Primero = Primero.Siguiente;  // Movemos el primero al siguiente y el primero se elimina
             }
         }
-
         public void Recorrer(DataGridView grilla)
         {
             Aux = Primero;
@@ -52,7 +66,6 @@ namespace pryEstructuraDatos
                 Aux = Aux.Siguiente;
             }
         }
-
         public void Recorrer(ListBox lista)
         {
             Aux = Primero;
@@ -60,17 +73,6 @@ namespace pryEstructuraDatos
             while (Aux != null)
             {
                 lista.Items.Add(Aux.Codigo + " " + Aux.Nombre + " " + Aux.Tramite);
-                Aux = Aux.Siguiente;
-            }
-        }
-
-        public void Recorrer(ComboBox combo)
-        {
-            Aux = Primero;
-            combo.Items.Clear();
-            while (Aux != null)
-            {
-                combo.Items.Add(Aux.Nombre);
                 Aux = Aux.Siguiente;
             }
         }

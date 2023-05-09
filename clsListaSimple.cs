@@ -46,6 +46,22 @@ namespace pryEstructuraDatos
                 }
             }
         }
+        public bool Buscar(int Codigo)
+        {
+            clsNodo Aux = Primero;
+            while (Aux != null && Aux.Codigo != Codigo)
+            {
+                Aux = Aux.Siguiente;
+            }
+            if (Aux != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Eliminar(Int32 Codigo)
         {
             if (Primero.Codigo == Codigo)
@@ -64,7 +80,6 @@ namespace pryEstructuraDatos
                 Anterior.Siguiente = Aux.Siguiente;
             }
         }
-
         public void Recorrer(DataGridView grilla)
         {
             Aux = Primero;
@@ -75,7 +90,6 @@ namespace pryEstructuraDatos
                 Aux = Aux.Siguiente;
             }
         }
-
         public void Recorrer(ListBox lista)
         {
             Aux = Primero;
@@ -86,7 +100,6 @@ namespace pryEstructuraDatos
                 Aux = Aux.Siguiente;
             }
         }
-
         public void Recorrer(ComboBox combo)
         {
             Aux = Primero;

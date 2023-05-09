@@ -16,60 +16,70 @@ namespace pryEstructuraDatos
         {
             InitializeComponent();
         }
-
          clsListaSimple Lista = new clsListaSimple();
-
-        private void frmEstructuraDinamicaLinealListaEnlazadaSimple_Load(object sender, EventArgs e)
-        {
-            //btnAgregar.Enabled = false;
-            btnEliminar.Enabled = false;
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo objNodo = new clsNodo();
+            try
+            {
+                if (txtCodigoNuevo.Text != "" && txtNombreNuevo.Text != "" && txtTramiteNuevo.Text != "")
+                {
+                    if (Lista.Buscar(Convert.ToInt32(txtCodigoNuevo.Text)) == false)
+                    {
+                        clsNodo objNodo = new clsNodo();
 
-            objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
-            objNodo.Nombre = txtNombreNuevo.Text;
-            objNodo.Tramite = txtTramiteNuevo.Text;
+                        objNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
+                        objNodo.Nombre = txtNombreNuevo.Text;
+                        objNodo.Tramite = txtTramiteNuevo.Text;
 
-            Lista.Agregar(objNodo);
-            Lista.Recorrer(dgvGrilla);
-            Lista.Recorrer(lsbLista);
-            Lista.Recorrer(cbEliminar);
+                        Lista.Agregar(objNodo);
+                        Lista.Recorrer(dgvGrilla);
+                        Lista.Recorrer(lsbLista);
+                        Lista.Recorrer(cbEliminar);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El codigo ya existe", "Error");
+                    }
 
-            txtCodigoNuevo.Text = "";
-            txtNombreNuevo.Text = "";
-            txtTramiteNuevo.Text = "";
-            txtCodigoNuevo.Focus();
+                    txtCodigoNuevo.Text = "";
+                    txtNombreNuevo.Text = "";
+                    txtTramiteNuevo.Text = "";
+                    txtCodigoNuevo.Focus();
+                }
+                else
+                {
+                    if (txtCodigoNuevo.Text == "") txtCodigoNuevo.Focus();
+                    else if (txtNombreNuevo.Text == "") txtNombreNuevo.Focus();
+                    else if (txtTramiteNuevo.Text == "") txtTramiteNuevo.Focus();
+                    MessageBox.Show("Complete todos los campos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Codigo invalido");
+                txtCodigoNuevo.Text = "";
+                txtCodigoNuevo.Focus();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if ((Lista.Primero != null) && (cbEliminar.Items != null))
+            if (Lista.Primero != null && cbEliminar.SelectedIndex != -1)
             {
-                cbEliminar.Text = Lista.Primero.Codigo.ToString();
-
                 Lista.Eliminar(Convert.ToInt32(cbEliminar.Text));
 
                 Lista.Recorrer(dgvGrilla);
                 Lista.Recorrer(lsbLista);
+                Lista.Recorrer(cbEliminar);
 
                 txtCodigoNuevo.Focus();
             }
             else
             {
                 MessageBox.Show("No se encontro ningun dato", "Error");
-
-                cbEliminar.Items.Clear();
-
+                Lista.Recorrer(cbEliminar);
                 txtCodigoNuevo.Focus();
             }
-        }
-
-        private void cbEliminar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            btnEliminar.Enabled = true;
         }
     }
 }
