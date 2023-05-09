@@ -163,5 +163,10 @@ namespace pryEstructuraDatos
                 tvDatos.ExpandAll();
             }
         }
+        private void tvDatos_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            clsNodo InfoNodo = Arbol.Informacion(Convert.ToInt32(e.Node.Text));
+            MessageBox.Show("Nombre: " + InfoNodo.Nombre + "  " + "Tramite: " + InfoNodo.Tramite, "Codigo " + InfoNodo.Codigo.ToString());
+        }
     }
 }

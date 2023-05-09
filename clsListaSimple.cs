@@ -46,7 +46,6 @@ namespace pryEstructuraDatos
                 }
             }
         }
-
         public void Eliminar(Int32 Codigo)
         {
             if (Primero.Codigo == Codigo)

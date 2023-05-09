@@ -24,6 +24,7 @@ namespace pryEstructuraDatos
         private int NodoEliminar;
         public void Equilibrar()
         {
+            NodoEliminar = default;
             i = 0;
             CargarVectorInOrder(Raiz);
             Raiz = null;
@@ -95,6 +96,22 @@ namespace pryEstructuraDatos
                 return false;
             }
         }
+        public clsNodo Informacion(int NodoInfo)
+        {
+            clsNodo Aux = Raiz;
+            while (Aux.Codigo != NodoInfo)
+            {
+                if (NodoInfo < Aux.Codigo)
+                {
+                    Aux = Aux.Izquierda;
+                }
+                else
+                {
+                    Aux = Aux.Derecha;
+                }
+            }
+            return Aux;
+           }
         public void Recorrer(ListBox Lista, bool Ascendente, string Recorrido)
         {
             Lista.Items.Clear ();

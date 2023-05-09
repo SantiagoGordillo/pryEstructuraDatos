@@ -43,91 +43,101 @@
             // lblNombreProgramador
             // 
             this.lblNombreProgramador.AutoSize = true;
-            this.lblNombreProgramador.Location = new System.Drawing.Point(267, 106);
+            this.lblNombreProgramador.Location = new System.Drawing.Point(178, 69);
+            this.lblNombreProgramador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreProgramador.Name = "lblNombreProgramador";
-            this.lblNombreProgramador.Size = new System.Drawing.Size(69, 20);
+            this.lblNombreProgramador.Size = new System.Drawing.Size(47, 13);
             this.lblNombreProgramador.TabIndex = 1;
             this.lblNombreProgramador.Text = "Nombre:";
             // 
             // lblDNIProgramador
             // 
             this.lblDNIProgramador.AutoSize = true;
-            this.lblDNIProgramador.Location = new System.Drawing.Point(267, 68);
+            this.lblDNIProgramador.Location = new System.Drawing.Point(178, 44);
+            this.lblDNIProgramador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDNIProgramador.Name = "lblDNIProgramador";
-            this.lblDNIProgramador.Size = new System.Drawing.Size(41, 20);
+            this.lblDNIProgramador.Size = new System.Drawing.Size(29, 13);
             this.lblDNIProgramador.TabIndex = 2;
             this.lblDNIProgramador.Text = "DNI:";
             // 
             // lblMateriaProgramador
             // 
             this.lblMateriaProgramador.AutoSize = true;
-            this.lblMateriaProgramador.Location = new System.Drawing.Point(267, 145);
+            this.lblMateriaProgramador.Location = new System.Drawing.Point(178, 94);
+            this.lblMateriaProgramador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMateriaProgramador.Name = "lblMateriaProgramador";
-            this.lblMateriaProgramador.Size = new System.Drawing.Size(66, 20);
+            this.lblMateriaProgramador.Size = new System.Drawing.Size(45, 13);
             this.lblMateriaProgramador.TabIndex = 3;
             this.lblMateriaProgramador.Text = "Materia:";
             // 
             // lblCarreraProgramador
             // 
             this.lblCarreraProgramador.AutoSize = true;
-            this.lblCarreraProgramador.Location = new System.Drawing.Point(267, 185);
+            this.lblCarreraProgramador.Location = new System.Drawing.Point(178, 120);
+            this.lblCarreraProgramador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarreraProgramador.Name = "lblCarreraProgramador";
-            this.lblCarreraProgramador.Size = new System.Drawing.Size(66, 20);
+            this.lblCarreraProgramador.Size = new System.Drawing.Size(44, 13);
             this.lblCarreraProgramador.TabIndex = 4;
             this.lblCarreraProgramador.Text = "Carrera:";
             // 
             // lblCarrera
             // 
             this.lblCarrera.AutoSize = true;
-            this.lblCarrera.Location = new System.Drawing.Point(348, 185);
+            this.lblCarrera.Location = new System.Drawing.Point(232, 120);
+            this.lblCarrera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(14, 20);
+            this.lblCarrera.Size = new System.Drawing.Size(10, 13);
             this.lblCarrera.TabIndex = 8;
             this.lblCarrera.Text = "-";
             // 
             // lblMateria
             // 
             this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(348, 145);
+            this.lblMateria.Location = new System.Drawing.Point(232, 94);
+            this.lblMateria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(14, 20);
+            this.lblMateria.Size = new System.Drawing.Size(10, 13);
             this.lblMateria.TabIndex = 7;
             this.lblMateria.Text = "-";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(348, 106);
+            this.lblNombre.Location = new System.Drawing.Point(232, 69);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(14, 20);
+            this.lblNombre.Size = new System.Drawing.Size(10, 13);
             this.lblNombre.TabIndex = 6;
             this.lblNombre.Text = "-";
             // 
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(348, 68);
+            this.lblDNI.Location = new System.Drawing.Point(232, 44);
+            this.lblDNI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(14, 20);
+            this.lblDNI.Size = new System.Drawing.Size(10, 13);
             this.lblDNI.TabIndex = 5;
             this.lblDNI.Text = "-";
             // 
             // pbProgramador
             // 
             this.pbProgramador.Image = global::pryEstructuraDatos.Properties.Resources.r;
-            this.pbProgramador.Location = new System.Drawing.Point(80, 34);
+            this.pbProgramador.Location = new System.Drawing.Point(53, 22);
+            this.pbProgramador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbProgramador.Name = "pbProgramador";
-            this.pbProgramador.Size = new System.Drawing.Size(159, 283);
+            this.pbProgramador.Size = new System.Drawing.Size(106, 184);
             this.pbProgramador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProgramador.TabIndex = 9;
             this.pbProgramador.TabStop = false;
             // 
             // frmDatosProgramador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(526, 365);
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(351, 237);
             this.Controls.Add(this.pbProgramador);
             this.Controls.Add(this.lblCarrera);
             this.Controls.Add(this.lblMateria);
@@ -138,6 +148,7 @@
             this.Controls.Add(this.lblDNIProgramador);
             this.Controls.Add(this.lblNombreProgramador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDatosProgramador";

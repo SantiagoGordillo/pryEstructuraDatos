@@ -46,7 +46,6 @@
             // 
             // msMain
             // 
-            this.msMain.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.msMain.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tmsiSistema,
@@ -54,7 +53,8 @@
             this.tmsiNoLineales});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(680, 33);
+            this.msMain.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.msMain.Size = new System.Drawing.Size(453, 24);
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
@@ -64,20 +64,20 @@
             this.tmsiDatosProgramador,
             this.tmsiSalir});
             this.tmsiSistema.Name = "tmsiSistema";
-            this.tmsiSistema.Size = new System.Drawing.Size(90, 29);
+            this.tmsiSistema.Size = new System.Drawing.Size(60, 22);
             this.tmsiSistema.Text = "Sistema";
             // 
             // tmsiDatosProgramador
             // 
             this.tmsiDatosProgramador.Name = "tmsiDatosProgramador";
-            this.tmsiDatosProgramador.Size = new System.Drawing.Size(272, 34);
+            this.tmsiDatosProgramador.Size = new System.Drawing.Size(177, 22);
             this.tmsiDatosProgramador.Text = "Datos Programador";
             this.tmsiDatosProgramador.Click += new System.EventHandler(this.tmsiDatosProgramador_Click);
             // 
             // tmsiSalir
             // 
             this.tmsiSalir.Name = "tmsiSalir";
-            this.tmsiSalir.Size = new System.Drawing.Size(272, 34);
+            this.tmsiSalir.Size = new System.Drawing.Size(177, 22);
             this.tmsiSalir.Text = "Salir";
             this.tmsiSalir.Click += new System.EventHandler(this.tmsiSalir_Click);
             // 
@@ -88,20 +88,20 @@
             this.tmsiColas,
             this.tmsiListas});
             this.tmsiLineales.Name = "tmsiLineales";
-            this.tmsiLineales.Size = new System.Drawing.Size(89, 29);
+            this.tmsiLineales.Size = new System.Drawing.Size(61, 22);
             this.tmsiLineales.Text = "Lineales";
             // 
             // tmsiPilas
             // 
             this.tmsiPilas.Name = "tmsiPilas";
-            this.tmsiPilas.Size = new System.Drawing.Size(157, 34);
+            this.tmsiPilas.Size = new System.Drawing.Size(103, 22);
             this.tmsiPilas.Text = "Pilas";
             this.tmsiPilas.Click += new System.EventHandler(this.tmsiPilas_Click);
             // 
             // tmsiColas
             // 
             this.tmsiColas.Name = "tmsiColas";
-            this.tmsiColas.Size = new System.Drawing.Size(157, 34);
+            this.tmsiColas.Size = new System.Drawing.Size(103, 22);
             this.tmsiColas.Text = "Colas";
             this.tmsiColas.Click += new System.EventHandler(this.tmsiColas_Click);
             // 
@@ -111,20 +111,20 @@
             this.tmsiSimples,
             this.tmsiDobles});
             this.tmsiListas.Name = "tmsiListas";
-            this.tmsiListas.Size = new System.Drawing.Size(157, 34);
+            this.tmsiListas.Size = new System.Drawing.Size(103, 22);
             this.tmsiListas.Text = "Listas";
             // 
             // tmsiSimples
             // 
             this.tmsiSimples.Name = "tmsiSimples";
-            this.tmsiSimples.Size = new System.Drawing.Size(176, 34);
+            this.tmsiSimples.Size = new System.Drawing.Size(115, 22);
             this.tmsiSimples.Text = "Simples";
             this.tmsiSimples.Click += new System.EventHandler(this.tmsiSimples_Click);
             // 
             // tmsiDobles
             // 
             this.tmsiDobles.Name = "tmsiDobles";
-            this.tmsiDobles.Size = new System.Drawing.Size(176, 34);
+            this.tmsiDobles.Size = new System.Drawing.Size(115, 22);
             this.tmsiDobles.Text = "Dobles";
             this.tmsiDobles.Click += new System.EventHandler(this.tmsiDobles_Click);
             // 
@@ -134,30 +134,32 @@
             this.tmsiArbolBinario,
             this.tmsiGrafo});
             this.tmsiNoLineales.Name = "tmsiNoLineales";
-            this.tmsiNoLineales.Size = new System.Drawing.Size(118, 29);
+            this.tmsiNoLineales.Size = new System.Drawing.Size(80, 22);
             this.tmsiNoLineales.Text = "No Lineales";
             // 
             // tmsiArbolBinario
             // 
             this.tmsiArbolBinario.Name = "tmsiArbolBinario";
-            this.tmsiArbolBinario.Size = new System.Drawing.Size(270, 34);
+            this.tmsiArbolBinario.Size = new System.Drawing.Size(143, 22);
             this.tmsiArbolBinario.Text = "Arbol Binario";
             this.tmsiArbolBinario.Click += new System.EventHandler(this.tmsiArbolBinario_Click);
             // 
             // tmsiGrafo
             // 
             this.tmsiGrafo.Name = "tmsiGrafo";
-            this.tmsiGrafo.Size = new System.Drawing.Size(270, 34);
+            this.tmsiGrafo.Size = new System.Drawing.Size(143, 22);
             this.tmsiGrafo.Text = "Grafos";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(680, 449);
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(453, 292);
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Text = "Estructura de Datos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
