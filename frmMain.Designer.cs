@@ -41,6 +41,9 @@
             this.tmsiNoLineales = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiArbolBinario = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiGrafo = new System.Windows.Forms.ToolStripMenuItem();
+            this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operacionesConBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaSQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +53,8 @@
             this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tmsiSistema,
             this.tmsiLineales,
-            this.tmsiNoLineales});
+            this.tmsiNoLineales,
+            this.baseDeDatosToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
             this.msMain.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -150,6 +154,29 @@
             this.tmsiGrafo.Size = new System.Drawing.Size(143, 22);
             this.tmsiGrafo.Text = "Grafos";
             // 
+            // baseDeDatosToolStripMenuItem
+            // 
+            this.baseDeDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operacionesConBDToolStripMenuItem,
+            this.consultaSQLToolStripMenuItem});
+            this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
+            this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.baseDeDatosToolStripMenuItem.Text = "Base de Datos";
+            // 
+            // operacionesConBDToolStripMenuItem
+            // 
+            this.operacionesConBDToolStripMenuItem.Name = "operacionesConBDToolStripMenuItem";
+            this.operacionesConBDToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.operacionesConBDToolStripMenuItem.Text = "Operaciones con BD";
+            this.operacionesConBDToolStripMenuItem.Click += new System.EventHandler(this.operacionesConBDToolStripMenuItem_Click);
+            // 
+            // consultaSQLToolStripMenuItem
+            // 
+            this.consultaSQLToolStripMenuItem.Name = "consultaSQLToolStripMenuItem";
+            this.consultaSQLToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.consultaSQLToolStripMenuItem.Text = "Consulta SQL";
+            this.consultaSQLToolStripMenuItem.Click += new System.EventHandler(this.consultaSQLToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +212,9 @@
         private System.Windows.Forms.ToolStripMenuItem tmsiDobles;
         private System.Windows.Forms.ToolStripMenuItem tmsiArbolBinario;
         private System.Windows.Forms.ToolStripMenuItem tmsiGrafo;
+        private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operacionesConBDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaSQLToolStripMenuItem;
     }
 }
 
