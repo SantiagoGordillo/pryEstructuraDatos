@@ -56,7 +56,7 @@
             this.rbInOrder = new System.Windows.Forms.RadioButton();
             this.tvDatos = new System.Windows.Forms.TreeView();
             this.gbTreeView = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMoreInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbRepresentacionListaSimple)).BeginInit();
             this.mrcListaGrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -384,7 +384,7 @@
             // gbTreeView
             // 
             this.gbTreeView.BackColor = System.Drawing.Color.Transparent;
-            this.gbTreeView.Controls.Add(this.label1);
+            this.gbTreeView.Controls.Add(this.lblMoreInfo);
             this.gbTreeView.Controls.Add(this.tvDatos);
             this.gbTreeView.Location = new System.Drawing.Point(927, 23);
             this.gbTreeView.Name = "gbTreeView";
@@ -393,15 +393,15 @@
             this.gbTreeView.TabStop = false;
             this.gbTreeView.Text = "Tree View";
             // 
-            // label1
+            // lblMoreInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 617);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 20);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Double click on each node for more information";
+            this.lblMoreInfo.AutoSize = true;
+            this.lblMoreInfo.Location = new System.Drawing.Point(40, 617);
+            this.lblMoreInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMoreInfo.Name = "lblMoreInfo";
+            this.lblMoreInfo.Size = new System.Drawing.Size(341, 20);
+            this.lblMoreInfo.TabIndex = 20;
+            this.lblMoreInfo.Text = "Double click on each node for more information";
             // 
             // frmEstructuraDinamicaNoLinealArbolBinario
             // 
@@ -466,7 +466,7 @@
         private System.Windows.Forms.RadioButton rbInOrder;
         private System.Windows.Forms.TreeView tvDatos;
         private System.Windows.Forms.GroupBox gbTreeView;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMoreInfo;
         private System.Windows.Forms.MaskedTextBox txtCodigoNuevo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcCódigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcNombre;

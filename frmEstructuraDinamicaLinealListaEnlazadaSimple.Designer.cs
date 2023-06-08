@@ -40,19 +40,19 @@ namespace pryEstructuraDatos
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblCodigoEliminar = new System.Windows.Forms.Label();
             this.mrcNuevosElementos = new System.Windows.Forms.GroupBox();
+            this.txtCodigoNuevo = new System.Windows.Forms.MaskedTextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtTramiteNuevo = new System.Windows.Forms.TextBox();
             this.txtNombreNuevo = new System.Windows.Forms.TextBox();
             this.lblCodigoNuevo = new System.Windows.Forms.Label();
             this.lblNombreNuevo = new System.Windows.Forms.Label();
             this.lblTramiteNuevo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtCodigoNuevo = new System.Windows.Forms.MaskedTextBox();
+            this.pbEstructura = new System.Windows.Forms.PictureBox();
             this.mrcListaGrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.mrcElementosEliminados.SuspendLayout();
             this.mrcNuevosElementos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEstructura)).BeginInit();
             this.SuspendLayout();
             // 
             // mrcListaGrilla
@@ -187,6 +187,16 @@ namespace pryEstructuraDatos
             this.mrcNuevosElementos.TabStop = false;
             this.mrcNuevosElementos.Text = "Nuevos Elementos";
             // 
+            // txtCodigoNuevo
+            // 
+            this.txtCodigoNuevo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigoNuevo.Location = new System.Drawing.Point(98, 38);
+            this.txtCodigoNuevo.Mask = "999999";
+            this.txtCodigoNuevo.Name = "txtCodigoNuevo";
+            this.txtCodigoNuevo.Size = new System.Drawing.Size(148, 26);
+            this.txtCodigoNuevo.TabIndex = 3;
+            this.txtCodigoNuevo.ValidatingType = typeof(int);
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(9, 258);
@@ -246,25 +256,15 @@ namespace pryEstructuraDatos
             this.lblTramiteNuevo.TabIndex = 4;
             this.lblTramiteNuevo.Text = "Trámite";
             // 
-            // pictureBox1
+            // pbEstructura
             // 
-            this.pictureBox1.Image = global::pryEstructuraDatos.Properties.Resources.ed5;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 195);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtCodigoNuevo
-            // 
-            this.txtCodigoNuevo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoNuevo.Location = new System.Drawing.Point(98, 38);
-            this.txtCodigoNuevo.Mask = "999999";
-            this.txtCodigoNuevo.Name = "txtCodigoNuevo";
-            this.txtCodigoNuevo.Size = new System.Drawing.Size(148, 26);
-            this.txtCodigoNuevo.TabIndex = 3;
-            this.txtCodigoNuevo.ValidatingType = typeof(int);
+            this.pbEstructura.Image = global::pryEstructuraDatos.Properties.Resources.ed5;
+            this.pbEstructura.Location = new System.Drawing.Point(12, 63);
+            this.pbEstructura.Name = "pbEstructura";
+            this.pbEstructura.Size = new System.Drawing.Size(333, 195);
+            this.pbEstructura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEstructura.TabIndex = 7;
+            this.pbEstructura.TabStop = false;
             // 
             // frmEstructuraDinamicaLinealListaEnlazadaSimple
             // 
@@ -273,7 +273,7 @@ namespace pryEstructuraDatos
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(922, 700);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbEstructura);
             this.Controls.Add(this.mrcListaGrilla);
             this.Controls.Add(this.mrcElementosEliminados);
             this.Controls.Add(this.mrcNuevosElementos);
@@ -290,7 +290,7 @@ namespace pryEstructuraDatos
             this.mrcElementosEliminados.PerformLayout();
             this.mrcNuevosElementos.ResumeLayout(false);
             this.mrcNuevosElementos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEstructura)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +313,7 @@ namespace pryEstructuraDatos
         private System.Windows.Forms.Label lblNombreNuevo;
         private System.Windows.Forms.Label lblTramiteNuevo;
         private System.Windows.Forms.ComboBox cbEliminar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbEstructura;
         private System.Windows.Forms.MaskedTextBox txtCodigoNuevo;
     }
 }

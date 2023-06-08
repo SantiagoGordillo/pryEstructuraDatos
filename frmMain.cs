@@ -40,20 +40,21 @@ namespace pryEstructuraDatos
         {
             new frmEstructuraDinamicaLinealListaEnlazadaDoble().ShowDialog();  
         }
-
         private void tmsiArbolBinario_Click(object sender, EventArgs e)
         {
             new frmEstructuraDinamicaNoLinealArbolBinario().ShowDialog();
         }
-
         private void operacionesConBDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmBaseDeDatos().ShowDialog();
         }
-
         private void consultaSQLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmConsultaSQL().ShowDialog();
+        }
+        private void repasoDeOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmRepasoOperaciones().ShowDialog();
         }
     }
 }

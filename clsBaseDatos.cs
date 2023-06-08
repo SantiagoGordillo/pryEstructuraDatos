@@ -44,7 +44,6 @@ namespace pryEstructuraDatos
                 conexion.Close();
             }
         }
-
         public void Listar(DataGridView Grilla, string varInstruccionSQL)
         {
             try

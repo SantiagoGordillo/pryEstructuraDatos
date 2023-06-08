@@ -52,11 +52,13 @@
             this.dgbMain.AllowUserToAddRows = false;
             this.dgbMain.AllowUserToDeleteRows = false;
             this.dgbMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbMain.Location = new System.Drawing.Point(12, 12);
+            this.dgbMain.Location = new System.Drawing.Point(18, 18);
+            this.dgbMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgbMain.Name = "dgbMain";
             this.dgbMain.ReadOnly = true;
             this.dgbMain.RowHeadersVisible = false;
-            this.dgbMain.Size = new System.Drawing.Size(776, 283);
+            this.dgbMain.RowHeadersWidth = 62;
+            this.dgbMain.Size = new System.Drawing.Size(1164, 435);
             this.dgbMain.TabIndex = 0;
             // 
             // gbProyeccion
@@ -64,18 +66,21 @@
             this.gbProyeccion.Controls.Add(this.btnProyeccionSimple);
             this.gbProyeccion.Controls.Add(this.btnProyeccionMultiple);
             this.gbProyeccion.Controls.Add(this.btnJuntar);
-            this.gbProyeccion.Location = new System.Drawing.Point(28, 301);
+            this.gbProyeccion.Location = new System.Drawing.Point(42, 463);
+            this.gbProyeccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbProyeccion.Name = "gbProyeccion";
-            this.gbProyeccion.Size = new System.Drawing.Size(224, 137);
+            this.gbProyeccion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbProyeccion.Size = new System.Drawing.Size(336, 211);
             this.gbProyeccion.TabIndex = 1;
             this.gbProyeccion.TabStop = false;
             this.gbProyeccion.Text = "Operaciones de Proyeccion";
             // 
             // btnProyeccionSimple
             // 
-            this.btnProyeccionSimple.Location = new System.Drawing.Point(17, 19);
+            this.btnProyeccionSimple.Location = new System.Drawing.Point(26, 29);
+            this.btnProyeccionSimple.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProyeccionSimple.Name = "btnProyeccionSimple";
-            this.btnProyeccionSimple.Size = new System.Drawing.Size(187, 23);
+            this.btnProyeccionSimple.Size = new System.Drawing.Size(280, 35);
             this.btnProyeccionSimple.TabIndex = 3;
             this.btnProyeccionSimple.Text = "Proyeccion Simple";
             this.btnProyeccionSimple.UseVisualStyleBackColor = true;
@@ -83,9 +88,10 @@
             // 
             // btnProyeccionMultiple
             // 
-            this.btnProyeccionMultiple.Location = new System.Drawing.Point(17, 57);
+            this.btnProyeccionMultiple.Location = new System.Drawing.Point(26, 88);
+            this.btnProyeccionMultiple.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProyeccionMultiple.Name = "btnProyeccionMultiple";
-            this.btnProyeccionMultiple.Size = new System.Drawing.Size(187, 23);
+            this.btnProyeccionMultiple.Size = new System.Drawing.Size(280, 35);
             this.btnProyeccionMultiple.TabIndex = 4;
             this.btnProyeccionMultiple.Text = "Proyeccion Multiatributo";
             this.btnProyeccionMultiple.UseVisualStyleBackColor = true;
@@ -93,9 +99,10 @@
             // 
             // btnJuntar
             // 
-            this.btnJuntar.Location = new System.Drawing.Point(17, 97);
+            this.btnJuntar.Location = new System.Drawing.Point(26, 149);
+            this.btnJuntar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnJuntar.Name = "btnJuntar";
-            this.btnJuntar.Size = new System.Drawing.Size(187, 23);
+            this.btnJuntar.Size = new System.Drawing.Size(280, 35);
             this.btnJuntar.TabIndex = 5;
             this.btnJuntar.Text = "Juntar";
             this.btnJuntar.UseVisualStyleBackColor = true;
@@ -106,18 +113,21 @@
             this.gbSeleccion.Controls.Add(this.btnSeleccionSimple);
             this.gbSeleccion.Controls.Add(this.btnSeleccionMultiple);
             this.gbSeleccion.Controls.Add(this.btnSeleccionConvolucion);
-            this.gbSeleccion.Location = new System.Drawing.Point(283, 301);
+            this.gbSeleccion.Location = new System.Drawing.Point(424, 463);
+            this.gbSeleccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbSeleccion.Name = "gbSeleccion";
-            this.gbSeleccion.Size = new System.Drawing.Size(224, 137);
+            this.gbSeleccion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbSeleccion.Size = new System.Drawing.Size(336, 211);
             this.gbSeleccion.TabIndex = 6;
             this.gbSeleccion.TabStop = false;
             this.gbSeleccion.Text = "Operaciones de Seleccion";
             // 
             // btnSeleccionSimple
             // 
-            this.btnSeleccionSimple.Location = new System.Drawing.Point(17, 19);
+            this.btnSeleccionSimple.Location = new System.Drawing.Point(26, 29);
+            this.btnSeleccionSimple.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSeleccionSimple.Name = "btnSeleccionSimple";
-            this.btnSeleccionSimple.Size = new System.Drawing.Size(187, 23);
+            this.btnSeleccionSimple.Size = new System.Drawing.Size(280, 35);
             this.btnSeleccionSimple.TabIndex = 3;
             this.btnSeleccionSimple.Text = "Seleccion Simple";
             this.btnSeleccionSimple.UseVisualStyleBackColor = true;
@@ -125,9 +135,10 @@
             // 
             // btnSeleccionMultiple
             // 
-            this.btnSeleccionMultiple.Location = new System.Drawing.Point(17, 57);
+            this.btnSeleccionMultiple.Location = new System.Drawing.Point(26, 88);
+            this.btnSeleccionMultiple.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSeleccionMultiple.Name = "btnSeleccionMultiple";
-            this.btnSeleccionMultiple.Size = new System.Drawing.Size(187, 23);
+            this.btnSeleccionMultiple.Size = new System.Drawing.Size(280, 35);
             this.btnSeleccionMultiple.TabIndex = 4;
             this.btnSeleccionMultiple.Text = "Seleccion Multioatributo";
             this.btnSeleccionMultiple.UseVisualStyleBackColor = true;
@@ -135,9 +146,10 @@
             // 
             // btnSeleccionConvolucion
             // 
-            this.btnSeleccionConvolucion.Location = new System.Drawing.Point(17, 97);
+            this.btnSeleccionConvolucion.Location = new System.Drawing.Point(26, 149);
+            this.btnSeleccionConvolucion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSeleccionConvolucion.Name = "btnSeleccionConvolucion";
-            this.btnSeleccionConvolucion.Size = new System.Drawing.Size(187, 23);
+            this.btnSeleccionConvolucion.Size = new System.Drawing.Size(280, 35);
             this.btnSeleccionConvolucion.TabIndex = 5;
             this.btnSeleccionConvolucion.Text = "Seleccion por Convolucion";
             this.btnSeleccionConvolucion.UseVisualStyleBackColor = true;
@@ -148,18 +160,21 @@
             this.gbAlgebraicas.Controls.Add(this.btnUnion);
             this.gbAlgebraicas.Controls.Add(this.btnInterseccion);
             this.gbAlgebraicas.Controls.Add(this.btnDiferencia);
-            this.gbAlgebraicas.Location = new System.Drawing.Point(540, 301);
+            this.gbAlgebraicas.Location = new System.Drawing.Point(810, 463);
+            this.gbAlgebraicas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbAlgebraicas.Name = "gbAlgebraicas";
-            this.gbAlgebraicas.Size = new System.Drawing.Size(224, 137);
+            this.gbAlgebraicas.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbAlgebraicas.Size = new System.Drawing.Size(336, 211);
             this.gbAlgebraicas.TabIndex = 6;
             this.gbAlgebraicas.TabStop = false;
             this.gbAlgebraicas.Text = "Operaciones Algebraicas";
             // 
             // btnUnion
             // 
-            this.btnUnion.Location = new System.Drawing.Point(17, 19);
+            this.btnUnion.Location = new System.Drawing.Point(26, 29);
+            this.btnUnion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUnion.Name = "btnUnion";
-            this.btnUnion.Size = new System.Drawing.Size(187, 23);
+            this.btnUnion.Size = new System.Drawing.Size(280, 35);
             this.btnUnion.TabIndex = 3;
             this.btnUnion.Text = "Union";
             this.btnUnion.UseVisualStyleBackColor = true;
@@ -167,9 +182,10 @@
             // 
             // btnInterseccion
             // 
-            this.btnInterseccion.Location = new System.Drawing.Point(17, 57);
+            this.btnInterseccion.Location = new System.Drawing.Point(26, 88);
+            this.btnInterseccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInterseccion.Name = "btnInterseccion";
-            this.btnInterseccion.Size = new System.Drawing.Size(187, 23);
+            this.btnInterseccion.Size = new System.Drawing.Size(280, 35);
             this.btnInterseccion.TabIndex = 4;
             this.btnInterseccion.Text = "Interseccion";
             this.btnInterseccion.UseVisualStyleBackColor = true;
@@ -177,9 +193,10 @@
             // 
             // btnDiferencia
             // 
-            this.btnDiferencia.Location = new System.Drawing.Point(17, 97);
+            this.btnDiferencia.Location = new System.Drawing.Point(26, 149);
+            this.btnDiferencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDiferencia.Name = "btnDiferencia";
-            this.btnDiferencia.Size = new System.Drawing.Size(187, 23);
+            this.btnDiferencia.Size = new System.Drawing.Size(280, 35);
             this.btnDiferencia.TabIndex = 5;
             this.btnDiferencia.Text = "Diferencia";
             this.btnDiferencia.UseVisualStyleBackColor = true;
@@ -187,16 +204,19 @@
             // 
             // frmBaseDeDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.gbAlgebraicas);
             this.Controls.Add(this.gbSeleccion);
             this.Controls.Add(this.gbProyeccion);
             this.Controls.Add(this.dgbMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmBaseDeDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Base de Datos";
