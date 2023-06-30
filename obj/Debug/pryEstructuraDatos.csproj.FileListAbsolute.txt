@@ -1,0 +1,57 @@
+D:\Escritorio\pryGordilloDatos\bin\Debug\pryEstructuraDatos.exe.config
+D:\Escritorio\pryGordilloDatos\bin\Debug\pryEstructuraDatos.exe
+D:\Escritorio\pryGordilloDatos\bin\Debug\pryEstructuraDatos.pdb
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.AssemblyReference.cache
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.SuggestedBindingRedirects.cache
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmBaseDeDatos.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmDatosProgramador.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealCola.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealListaEnlazadaDoble.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealListaEnlazadaSimple.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealPila.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaNoLinealArbolBinario.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmMain.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.Properties.Resources.resources
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.GenerateResource.cache
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.CoreCompileInputs.cache
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.exe
+D:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.pdb
+E:\Escritorio\pryGordilloDatos\bin\Debug\pryEstructuraDatos.exe.config
+E:\Escritorio\pryGordilloDatos\bin\Debug\pryEstructuraDatos.exe
+E:\Escritorio\pryGordilloDatos\bin\Debug\pryEstructuraDatos.pdb
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.AssemblyReference.cache
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.SuggestedBindingRedirects.cache
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmBaseDeDatos.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmDatosProgramador.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealCola.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealListaEnlazadaDoble.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealListaEnlazadaSimple.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealPila.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaNoLinealArbolBinario.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmMain.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.Properties.Resources.resources
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.GenerateResource.cache
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.CoreCompileInputs.cache
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.exe
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.pdb
+E:\Escritorio\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmConsultaSQL.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\bin\Debug\pryEstructuraDatos.exe.config
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\bin\Debug\pryEstructuraDatos.exe
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\bin\Debug\pryEstructuraDatos.pdb
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmBaseDeDatos.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmConsultaSQL.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmDatosProgramador.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealCola.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealListaEnlazadaDoble.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealListaEnlazadaSimple.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaLinealPila.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmEstructuraDinamicaNoLinealArbolBinario.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmMain.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.frmRepasoOperaciones.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.Properties.Resources.resources
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.exe
+C:\Users\Admin\Desktop\Trabajos\Proyectos Semestre 3\Estructura de Datos\pryGordilloDatos\obj\Debug\pryEstructuraDatos.pdb
