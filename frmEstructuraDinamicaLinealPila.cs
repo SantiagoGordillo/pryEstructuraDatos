@@ -60,7 +60,7 @@ namespace pryEstructuraDatos
                     MessageBox.Show("Complete todos los campos");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Codigo invalido");
                 txtCodigoNuevo.Text = "";

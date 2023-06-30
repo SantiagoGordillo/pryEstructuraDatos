@@ -60,7 +60,7 @@
             this.tsmiBaseDeDatos});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(680, 36);
+            this.msMain.Size = new System.Drawing.Size(680, 33);
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
@@ -70,7 +70,7 @@
             this.tsmiDatosProgramador,
             this.tsmiSalir});
             this.tsmiSistema.Name = "tsmiSistema";
-            this.tsmiSistema.Size = new System.Drawing.Size(90, 32);
+            this.tsmiSistema.Size = new System.Drawing.Size(90, 29);
             this.tsmiSistema.Text = "Sistema";
             // 
             // tsmiDatosProgramador
@@ -94,20 +94,20 @@
             this.tsmiColas,
             this.tsmiListas});
             this.tsmiLineales.Name = "tsmiLineales";
-            this.tsmiLineales.Size = new System.Drawing.Size(89, 32);
+            this.tsmiLineales.Size = new System.Drawing.Size(89, 29);
             this.tsmiLineales.Text = "Lineales";
             // 
             // tsmiPilas
             // 
             this.tsmiPilas.Name = "tsmiPilas";
-            this.tsmiPilas.Size = new System.Drawing.Size(270, 34);
+            this.tsmiPilas.Size = new System.Drawing.Size(157, 34);
             this.tsmiPilas.Text = "Pilas";
             this.tsmiPilas.Click += new System.EventHandler(this.tmsiPilas_Click);
             // 
             // tsmiColas
             // 
             this.tsmiColas.Name = "tsmiColas";
-            this.tsmiColas.Size = new System.Drawing.Size(270, 34);
+            this.tsmiColas.Size = new System.Drawing.Size(157, 34);
             this.tsmiColas.Text = "Colas";
             this.tsmiColas.Click += new System.EventHandler(this.tmsiColas_Click);
             // 
@@ -117,20 +117,20 @@
             this.tsmiSimples,
             this.tsmiDobles});
             this.tsmiListas.Name = "tsmiListas";
-            this.tsmiListas.Size = new System.Drawing.Size(270, 34);
+            this.tsmiListas.Size = new System.Drawing.Size(157, 34);
             this.tsmiListas.Text = "Listas";
             // 
             // tsmiSimples
             // 
             this.tsmiSimples.Name = "tsmiSimples";
-            this.tsmiSimples.Size = new System.Drawing.Size(270, 34);
+            this.tsmiSimples.Size = new System.Drawing.Size(176, 34);
             this.tsmiSimples.Text = "Simples";
             this.tsmiSimples.Click += new System.EventHandler(this.tmsiSimples_Click);
             // 
             // tsmiDobles
             // 
             this.tsmiDobles.Name = "tsmiDobles";
-            this.tsmiDobles.Size = new System.Drawing.Size(270, 34);
+            this.tsmiDobles.Size = new System.Drawing.Size(176, 34);
             this.tsmiDobles.Text = "Dobles";
             this.tsmiDobles.Click += new System.EventHandler(this.tmsiDobles_Click);
             // 
@@ -140,20 +140,20 @@
             this.tsmiArbolBinario,
             this.tsmiGrafo});
             this.tsmiNoLineales.Name = "tsmiNoLineales";
-            this.tsmiNoLineales.Size = new System.Drawing.Size(118, 32);
+            this.tsmiNoLineales.Size = new System.Drawing.Size(118, 29);
             this.tsmiNoLineales.Text = "No Lineales";
             // 
             // tsmiArbolBinario
             // 
             this.tsmiArbolBinario.Name = "tsmiArbolBinario";
-            this.tsmiArbolBinario.Size = new System.Drawing.Size(270, 34);
+            this.tsmiArbolBinario.Size = new System.Drawing.Size(217, 34);
             this.tsmiArbolBinario.Text = "Arbol Binario";
             this.tsmiArbolBinario.Click += new System.EventHandler(this.tmsiArbolBinario_Click);
             // 
             // tsmiGrafo
             // 
             this.tsmiGrafo.Name = "tsmiGrafo";
-            this.tsmiGrafo.Size = new System.Drawing.Size(270, 34);
+            this.tsmiGrafo.Size = new System.Drawing.Size(217, 34);
             this.tsmiGrafo.Text = "Grafos";
             // 
             // tsmiBaseDeDatos
@@ -164,7 +164,7 @@
             this.tsSeparator1,
             this.tsmiRepasoDeOperaciones});
             this.tsmiBaseDeDatos.Name = "tsmiBaseDeDatos";
-            this.tsmiBaseDeDatos.Size = new System.Drawing.Size(141, 32);
+            this.tsmiBaseDeDatos.Size = new System.Drawing.Size(141, 29);
             this.tsmiBaseDeDatos.Text = "Base de Datos";
             // 
             // tsmiOperacionesConBaseDeDatos
@@ -203,6 +203,7 @@
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Estructura de Datos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.msMain.ResumeLayout(false);
